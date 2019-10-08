@@ -1,0 +1,54 @@
+Classfile /F:/ideaproject/server/src/main/java/server/basic/clz/MerchantOther.class
+  Last modified 2019-9-10; size 406 bytes
+  MD5 checksum a439eaad5cd26ed8bc547d9e4d5ccc05
+  Compiled from "MethodFind.java"
+abstract class server.basic.clz.MerchantOther<T extends server.basic.clz.Customer> extends java.lang.Object
+  minor version: 0
+  major version: 52
+  flags: ACC_SUPER, ACC_ABSTRACT
+Constant pool:
+   #1 = Methodref          #5.#17         // java/lang/Object."<init>":()V
+   #2 = Double             0.08d
+   #4 = Class              #18            // server/basic/clz/MerchantOther
+   #5 = Class              #19            // java/lang/Object
+   #6 = Utf8               <init>
+   #7 = Utf8               ()V
+   #8 = Utf8               Code
+   #9 = Utf8               LineNumberTable
+  #10 = Utf8               actionPrice
+  #11 = Utf8               (DLserver/basic/clz/Customer;)D
+  #12 = Utf8               Signature
+  #13 = Utf8               (DTT;)D
+  #14 = Utf8               <T::Lserver/basic/clz/Customer;>Ljava/lang/Object;
+  #15 = Utf8               SourceFile
+  #16 = Utf8               MethodFind.java
+  #17 = NameAndType        #6:#7          // "<init>":()V
+  #18 = Utf8               server/basic/clz/MerchantOther
+  #19 = Utf8               java/lang/Object
+{
+  server.basic.clz.MerchantOther();
+    descriptor: ()V
+    flags:
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 21: 0
+
+  public double actionPrice(double, T);
+    descriptor: (DLserver/basic/clz/Customer;)D
+    flags: ACC_PUBLIC
+    Code:
+      stack=4, locals=4, args_size=3
+         0: dload_1
+         1: ldc2_w        #2                  // double 0.08d
+         4: dmul
+         5: dreturn
+      LineNumberTable:
+        line 23: 0
+    Signature: #13                          // (DTT;)D
+}
+Signature: #14                          // <T::Lserver/basic/clz/Customer;>Ljava/lang/Object;
+SourceFile: "MethodFind.java"

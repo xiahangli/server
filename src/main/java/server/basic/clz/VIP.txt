@@ -1,0 +1,50 @@
+Classfile /F:/ideaproject/server/src/main/java/server/basic/clz/VIP.class
+  Last modified 2019-9-10; size 329 bytes
+  MD5 checksum c2efae0f88ce742e14248cff5acf518a
+  Compiled from "MethodFind.java"
+class server.basic.clz.VIP implements server.basic.clz.Customer
+  minor version: 0
+  major version: 52
+  flags: ACC_SUPER
+Constant pool:
+   #1 = Methodref          #4.#14         // java/lang/Object."<init>":()V
+   #2 = String             #15            // VIP First !
+   #3 = Class              #16            // server/basic/clz/VIP
+   #4 = Class              #17            // java/lang/Object
+   #5 = Class              #18            // server/basic/clz/Customer
+   #6 = Utf8               <init>
+   #7 = Utf8               ()V
+   #8 = Utf8               Code
+   #9 = Utf8               LineNumberTable
+  #10 = Utf8               purchase
+  #11 = Utf8               ()Ljava/lang/String;
+  #12 = Utf8               SourceFile
+  #13 = Utf8               MethodFind.java
+  #14 = NameAndType        #6:#7          // "<init>":()V
+  #15 = Utf8               VIP First !
+  #16 = Utf8               server/basic/clz/VIP
+  #17 = Utf8               java/lang/Object
+  #18 = Utf8               server/basic/clz/Customer
+{
+  server.basic.clz.VIP();
+    descriptor: ()V
+    flags:
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 7: 0
+
+  public java.lang.String purchase();
+    descriptor: ()Ljava/lang/String;
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: ldc           #2                  // String VIP First !
+         2: areturn
+      LineNumberTable:
+        line 10: 0
+}
+SourceFile: "MethodFind.java"

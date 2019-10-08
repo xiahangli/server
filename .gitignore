@@ -1,0 +1,7 @@
+/.idea
+web/WEB-INF/classes/*
+.idea/workspace.xml
+*.DS_store
+/out
+gitserver.iml
+server.iml

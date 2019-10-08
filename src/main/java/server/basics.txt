@@ -1,0 +1,37 @@
+java基本的数据类型 boolean（1位） byte(1字节) char(2) short(2) int(4) long(8) float(4) double(8)
+java 容量小的数据类型转换成容量大的没关系，
+java 默认小数是双精度类型的，那么float a = 3.4是错误的，3.4double类型，不能窄化转变成float,会导致精度丢失。需强制转化float a= 3.4f或float a = (float)3.4
+Integer i1 = 100, i2 = 100,i3=150,i4=150则sout(i1==i2)为true,==比较的是两个integer的引用，由于在给包装对象赋值一个integer的时候，自动装箱，即调用
+Integer.valueOf(100),而查看源码可知100是有缓存的，那么i2的时候用的是缓存，也就是同一个引用，所以相等，而150不在-128-127之间，所以引用不同，false
+&&短路运算符，左边值为false,直接跳过右边值的判断。&逻辑与，或者位与。均要求两端为true才为真。||短路或，左边为真右边就不判断。
+栈stack.基本数据类型，对象的引用，函数调用的现场保存，均存储在内存的stack空间中。new 和构造器创建的对象是heap堆空间的。
+字面量100，"hell",或者static final均放在内存的静态区域。String s = new String("hell");s在栈中，new 创建的对象在堆中，hell在静态区域
+Math.round(11.5)=12 Math.round(-11.5) = -11 四舍五入的原理是 (x+1)然后下取整
+switch1.5之前可作用于char,byte,short,int,1.5中可以作用于enum,1.7可作用于String,long不可
+数组有length属性，String有length方法
+java跳出多重循环的方法，在外层设置个标记A,然后break A；这是带标签的break：语句，少用
+Constructor不可被重写(override)，但可以被重载（overloading）
+两个对象值相同x.equals(y)为真，那么hash值必须相同，相反不成立。(这是原则，破坏原则的代价就是比如相同的对象可以出现在set集合中，增加新元素的效率低)
+String final不可继承，他的使用是has a也就是组合的
+对象作为参数传递到方法中，此方法可改变这个对象属性，这里属于地址传递（有歧义）
+StringBuilder是线程不安全的，StringBuffer线程安全，String 指向的字符串不变。（有歧义）
+Override是运行时多态，Overload是编译时多态。
+JVM加载class文件的原理：
+ClassLoader通过把类的.class文件读入内存，然后产生与.class对应的Class对象，加载完后还要连接，
+
+char可以存放一个中文汉字，2byte
+静态方法不能访问非静态方法，有可能该方法还没被实例化呢
+静态变量是类变量，属于类，不属于类的任何一个对象，静态变量永远只有一个，静态变量可以多个对象共享内存。
+对象克隆 a:实现cloneable并重写clone方法
+        b:实现serializable接口，通过序列化和反序列化实现clone。（深拷贝）
+
+显式的System.gc() RunTime().getRunTime().gc();系统可屏蔽。垃圾回收器是作为一个低优先级的线程运行的。不可预知的情况下对已经死亡的或者很少使用的对象进行回收。
+
+垃圾回收机制：分代复制垃圾回收 标记垃圾回收 增量垃圾回收
+
+创建对象时构造器的调用顺序是先初始化静态成员，后调用父类构造函数，在初始化非静态成员，最后调用自身构造函数。见static
+
+泛型
+T method()代表返回一个具体的类型，如Activity (Activity)c = class.newInstance()Object类中包含一个方法名叫getClass，利用这个方法就可以获得一个实例的类型类。类型类指的是代表一个类型的类，
+因为一切皆是对象，类型也不例外，在Java使用类型类来表示一个类型。所有的类型类都是Class类的实例。getClass() 会看到返回Class<?>
+

@@ -1,0 +1,100 @@
+Classfile /F:/ideaproject/server/src/main/java/server/basic/clz/Class.class
+  Last modified 2019-8-27; size 541 bytes
+  MD5 checksum 520490239d1e2d9aa4710ceb261d431f
+  Compiled from "Class.java"
+public class server.basic.clz.Class
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #7.#22         // java/lang/Object."<init>":()V
+   #2 = String             #23            // hangli
+   #3 = Fieldref           #6.#24         // server/basic/clz/Class.s:Ljava/lang/String;
+   #4 = Fieldref           #25.#26        // java/lang/System.out:Ljava/io/PrintStream;
+   #5 = Methodref          #27.#28        // java/io/PrintStream.println:(I)V
+   #6 = Class              #29            // server/basic/clz/Class
+   #7 = Class              #30            // java/lang/Object
+   #8 = Utf8               s
+   #9 = Utf8               Ljava/lang/St  ring;
+  #10 = Utf8               i
+  #11 = Utf8               I
+  #12 = Utf8               ConstantValue
+  #13 = Integer            1
+  #14 = Utf8               <init>
+  #15 = Utf8               ()V
+  #16 = Utf8               Code
+  #17 = Utf8               LineNumberTable
+  #18 = Utf8               main
+  #19 = Utf8               ([Ljava/lang/String;)V
+  #20 = Utf8               SourceFile
+  #21 = Utf8               Class.java
+  #22 = NameAndType        #14:#15        // "<init>":()V
+  #23 = Utf8               hangli
+  #24 = NameAndType        #8:#9          // s:Ljava/lang/String;
+  #25 = Class              #31            // java/lang/System
+  #26 = NameAndType        #32:#33        // out:Ljava/io/PrintStream;
+  #27 = Class              #34            // java/io/PrintStream
+  #28 = NameAndType        #35:#36        // println:(I)V
+  #29 = Utf8               server/basic/clz/Class
+  #30 = Utf8               java/lang/Object
+  #31 = Utf8               java/lang/System
+  #32 = Utf8               out
+  #33 = Utf8               Ljava/io/PrintStream;
+  #34 = Utf8               java/io/PrintStream
+  #35 = Utf8               println
+  #36 = Utf8               (I)V
+{
+  public java.lang.String s;
+    descriptor: Ljava/lang/String;
+    flags: ACC_PUBLIC
+
+  public static final int i;
+    descriptor: I
+    flags: ACC_PUBLIC, ACC_STATIC, ACC_FINAL
+    ConstantValue: int 1
+
+  public server.basic.clz.Class();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: ldc           #2                  // String hangli
+         7: putfield      #3                  // Field s:Ljava/lang/String;
+        10: return
+      LineNumberTable:
+        line 10: 0
+        line 11: 4
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=3, locals=5, args_size=1
+         0: sipush        500
+         3: istore_1
+         4: bipush        100
+         6: istore_2
+         7: iload_1
+         8: iload_2
+         9: idiv
+        10: istore_3
+        11: bipush        50
+        13: istore        4
+        15: getstatic     #4                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        18: iload_3
+        19: iload         4
+        21: iadd
+        22: invokevirtual #5                  // Method java/io/PrintStream.println:(I)V
+        25: return
+      LineNumberTable:
+        line 14: 0
+        line 15: 4
+        line 16: 7
+        line 17: 11
+        line 18: 15
+        line 19: 25
+}
+SourceFile: "Class.java"

@@ -1,0 +1,71 @@
+Classfile /F:/ideaproject/server/src/main/java/server/basic/clz/VIPOnlyMerchant.class
+  Last modified 2019-9-10; size 523 bytes
+  MD5 checksum 331d07f2bc22559cf27171eccfa5e3bf
+  Compiled from "MethodFind.java"
+class server.basic.clz.VIPOnlyMerchant extends server.basic.clz.MerchantOther<server.basic.clz.VIP>
+  minor version: 0
+  major version: 52
+  flags: ACC_SUPER
+Constant pool:
+   #1 = Methodref          #7.#19         // server/basic/clz/MerchantOther."<init>":()V
+   #2 = Double             0.07d
+   #4 = Class              #20            // server/basic/clz/VIP
+   #5 = Methodref          #6.#21         // server/basic/clz/VIPOnlyMerchant.actionPrice:(DLserver/basic/clz/VIP;)D
+   #6 = Class              #22            // server/basic/clz/VIPOnlyMerchant
+   #7 = Class              #23            // server/basic/clz/MerchantOther
+   #8 = Utf8               <init>
+   #9 = Utf8               ()V
+  #10 = Utf8               Code
+  #11 = Utf8               LineNumberTable
+  #12 = Utf8               actionPrice
+  #13 = Utf8               (DLserver/basic/clz/VIP;)D
+  #14 = Utf8               (DLserver/basic/clz/Customer;)D
+  #15 = Utf8               Signature
+  #16 = Utf8               Lserver/basic/clz/MerchantOther<Lserver/basic/clz/VIP;>;
+  #17 = Utf8               SourceFile
+  #18 = Utf8               MethodFind.java
+  #19 = NameAndType        #8:#9          // "<init>":()V
+  #20 = Utf8               server/basic/clz/VIP
+  #21 = NameAndType        #12:#13        // actionPrice:(DLserver/basic/clz/VIP;)D
+  #22 = Utf8               server/basic/clz/VIPOnlyMerchant
+  #23 = Utf8               server/basic/clz/MerchantOther
+{
+  server.basic.clz.VIPOnlyMerchant();
+    descriptor: ()V
+    flags:
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method server/basic/clz/MerchantOther."<init>":()V
+         4: return
+      LineNumberTable:
+        line 27: 0
+
+  public double actionPrice(double, server.basic.clz.VIP);
+    descriptor: (DLserver/basic/clz/VIP;)D
+    flags: ACC_PUBLIC
+    Code:
+      stack=4, locals=4, args_size=3
+         0: dload_1
+         1: ldc2_w        #2                  // double 0.07d
+         4: dmul
+         5: dreturn
+      LineNumberTable:
+        line 30: 0
+
+  public double actionPrice(double, server.basic.clz.Customer);
+    descriptor: (DLserver/basic/clz/Customer;)D
+    flags: ACC_PUBLIC, ACC_BRIDGE, ACC_SYNTHETIC
+    Code:
+      stack=4, locals=4, args_size=3
+         0: aload_0
+         1: dload_1
+         2: aload_3
+         3: checkcast     #4                  // class server/basic/clz/VIP
+         6: invokevirtual #5                  // Method actionPrice:(DLserver/basic/clz/VIP;)D
+         9: dreturn
+      LineNumberTable:
+        line 27: 0
+}
+Signature: #16                          // Lserver/basic/clz/MerchantOther<Lserver/basic/clz/VIP;>;
+SourceFile: "MethodFind.java"

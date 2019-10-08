@@ -1,0 +1,44 @@
+Classfile /F:/ideaproject/server/src/main/java/server/basic/clz/FinalStaticStringTest.class
+  Last modified 2019-8-28; size 304 bytes
+  MD5 checksum fde4c7a8c5f5fa10e9285be04108ae37
+  Compiled from "FinalStaticStringTest.java"
+public class server.basic.clz.FinalStaticStringTest
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #3.#14         // java/lang/Object."<init>":()V
+   #2 = Class              #15            // server/basic/clz/FinalStaticStringTest
+   #3 = Class              #16            // java/lang/Object
+   #4 = Utf8               VALUE
+   #5 = Utf8               Ljava/lang/String;
+   #6 = Utf8               ConstantValue
+   #7 = String             #17            // TEMP
+   #8 = Utf8               <init>
+   #9 = Utf8               ()V
+  #10 = Utf8               Code
+  #11 = Utf8               LineNumberTable
+  #12 = Utf8               SourceFile
+  #13 = Utf8               FinalStaticStringTest.java
+  #14 = NameAndType        #8:#9          // "<init>":()V
+  #15 = Utf8               server/basic/clz/FinalStaticStringTest
+  #16 = Utf8               java/lang/Object
+  #17 = Utf8               TEMP
+{
+  public static final java.lang.String VALUE;
+    descriptor: Ljava/lang/String;
+    flags: ACC_PUBLIC, ACC_STATIC, ACC_FINAL
+    ConstantValue: String TEMP
+
+  public server.basic.clz.FinalStaticStringTest();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 6: 0
+}
+SourceFile: "FinalStaticStringTest.java"

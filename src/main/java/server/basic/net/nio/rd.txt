@@ -1,0 +1,34 @@
+多路复用selector 不断轮询注册在上面的channel,若某个channel发生读写操作，这channel处于就绪状态，被selector查到，
+然后通过SelectionKey获取就绪channel的集合，做后续i/o操作。
+
+通道channel（全双工双向交流）
+selectablechannel 网络读写(子类是Serversocketchannel socketchannel)
+filechannel 文件读写
+
+缓冲区（数组）
+nio所有数据通过缓冲区处理，读取数据是到缓冲区读取，写入也是写入到缓冲区的。
+ByteBuffer等
+
+
+    //1.打开ServerSocketChannel（SelectableChannel（用户网络读写）的子类）通道
+
+    //2.绑定监听端口，设置连接非阻塞
+
+    //3.创建多路复用selector并启动线程
+
+    //4.selector轮询key
+
+    //5.selector监听新客户端介入，处理新的接入请求，完成tcp握手，遍历物理链路
+
+    //6.设置客户端链路非阻塞模式
+
+    //7.将新接入的客户端连接注册到reator线程的selector上，监听读操作，读取客户端发送的网络消息
+
+    //8.**异步读取客户端消息到缓冲区
+
+    //9.对buffer编解码，
+
+    .以下代码未体现
+       ///10 处理半包消息，封装成Task
+
+      //11  应答消息编解码，调用channel.write异步发送到客户端

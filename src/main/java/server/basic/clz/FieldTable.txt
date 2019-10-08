@@ -1,0 +1,72 @@
+Classfile /Users/henry/Desktop/study/javastyProject/server/src/main/java/server/basic/clz/FieldTable.class
+  Last modified 2019-9-10; size 448 bytes
+  MD5 checksum 3afd199178b5a128d5eba42a24122799
+  Compiled from "FieldTable.java"
+public class server.basic.clz.FieldTable
+  SourceFile: "FieldTable.java"
+  minor version: 0
+  major version: 51
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #5.#23         //  java/lang/Object."<init>":()V
+   #2 = Fieldref           #4.#24         //  server/basic/clz/FieldTable.ii:I
+   #3 = Fieldref           #4.#25         //  server/basic/clz/FieldTable.iii:I
+   #4 = Class              #26            //  server/basic/clz/FieldTable
+   #5 = Class              #27            //  java/lang/Object
+   #6 = Utf8               ii
+   #7 = Utf8               I
+   #8 = Utf8               i
+   #9 = Utf8               ConstantValue
+  #10 = Integer            1
+  #11 = Utf8               iii
+  #12 = Utf8               s
+  #13 = Utf8               Ljava/lang/String;
+  #14 = String             #28            //  string
+  #15 = Utf8               <init>
+  #16 = Utf8               ()V
+  #17 = Utf8               Code
+  #18 = Utf8               LineNumberTable
+  #19 = Utf8               main
+  #20 = Utf8               ([Ljava/lang/String;)V
+  #21 = Utf8               SourceFile
+  #22 = Utf8               FieldTable.java
+  #23 = NameAndType        #15:#16        //  "<init>":()V
+  #24 = NameAndType        #6:#7          //  ii:I
+  #25 = NameAndType        #11:#7         //  iii:I
+  #26 = Utf8               server/basic/clz/FieldTable
+  #27 = Utf8               java/lang/Object
+  #28 = Utf8               string
+{
+  int ii;
+    flags: 
+
+  static int iii;
+    flags: ACC_STATIC
+
+  public server.basic.clz.FieldTable();
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: aload_0       
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: aload_0       
+         5: iconst_1      
+         6: putfield      #2                  // Field ii:I
+         9: return        
+      LineNumberTable:
+        line 6: 0
+        line 7: 4
+
+  public static void main(java.lang.String[]);
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: getstatic     #3                  // Field iii:I
+         3: iconst_1      
+         4: iadd          
+         5: putstatic     #3                  // Field iii:I
+         8: return        
+      LineNumberTable:
+        line 13: 0
+        line 14: 8
+}

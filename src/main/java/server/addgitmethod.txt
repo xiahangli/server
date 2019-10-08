@@ -1,0 +1,2 @@
+vcs->import into cvs->create git repository
+然后git commit git push

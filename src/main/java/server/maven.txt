@@ -1,0 +1,3 @@
+1.官网下载maven
+2.idea未打开项目前配置project default勾选maven
+3.项目右键，add framwork support 勾选maven
