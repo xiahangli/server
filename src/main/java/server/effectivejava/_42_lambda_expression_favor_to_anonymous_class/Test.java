@@ -2,6 +2,7 @@ package server.effectivejava._42_lambda_expression_favor_to_anonymous_class;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -18,6 +19,7 @@ public class Test {
         };
         //烧好的lambda写法
         TestInterface t = (a) -> Integer.valueOf(a);
+
         int a1 = t.a("1111");
 //        TestInterface t = (a)->Integer.valueOf(a);
 
@@ -44,8 +46,13 @@ public class Test {
         Collections.sort(words, (o1, o2) -> Integer.compare(o1.length(), o2.length()));
 
 
+
+
+
         //使用构造器的方法引用，这里其实有四种不同类型的方法引用，static方法引用，特定对象的方法引用，特定类型的方法引用，构造器的方法引用
-        Collections.sort(words,Integer::compare());
+        Collections.sort(words, Comparator.comparingInt(String::length));
+        //最好的方式：使用list自带的sort方法
+        words.sort(Comparator.comparingInt(String::length));
     }
 
     static class TestClass {
@@ -64,6 +71,22 @@ public class Test {
     interface TestInterface {
         //        void a(int a);
         int a(String a);
+
+        /**
+         *  若一个接口中定义了一个默认方法，而另外一个接口中又定义了一个同名方法时，
+         *  接口冲突。不管是否是默认方法，那么必须覆盖该方法来解决冲突
+         * 这里必须为default，否则lambda表达式无法用在函数式编程上
+         * @param s
+         */
+        default int b(int s) {
+            return -1 ;
+        }
+
+        /**
+         *在 java8 中的接口中不仅增加了默认方法，还增加了静态方法。使用方式接口名.方法名
+         * @return
+         */
+        static int c(){return -1;}
 //        void b(int c);
 //        void a();
     }

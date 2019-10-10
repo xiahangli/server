@@ -1,6 +1,5 @@
 package server.basic.net.socket.client;
 
-import sun.rmi.runtime.Log;
 
 import java.io.*;
 import java.net.*;
