@@ -11,12 +11,13 @@ public class TestWildCard {
     }
 
     /**
-     * wildcard 不能用在具体的类型方法上
+     * wildcard 不能用在具体的类型方法上，但是添加null是可以的
      * @param collection
      */
     public void testWildCard(Collection<?> collection){
 //        Collection collection1 = null;
 //        collection.add("12");d
+        collection.add(null);//添加null是可以的
         collection.contains(12);
         collection.containsAll(new ArrayList<>());//可以
         collection.remove("12");//可以删除，因为类型为Object

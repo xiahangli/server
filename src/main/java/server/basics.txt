@@ -32,6 +32,9 @@ char可以存放一个中文汉字，2byte
 创建对象时构造器的调用顺序是先初始化静态成员，后调用父类构造函数，在初始化非静态成员，最后调用自身构造函数。见static
 
 泛型
-T method()代表返回一个具体的类型，如Activity (Activity)c = class.newInstance()Object类中包含一个方法名叫getClass，利用这个方法就可以获得一个实例的类型类。类型类指的是代表一个类型的类，
-因为一切皆是对象，类型也不例外，在Java使用类型类来表示一个类型。所有的类型类都是Class类的实例。getClass() 会看到返回Class<?>
+T method()代表返回一个具体的类型，
+如Activity (Activity)c = class.newInstance()Object类中包含一个方法名叫getClass，
+利用这个方法就可以获得一个实例的类型类。
+类型类指的是代表一个类型的类，因为一切皆是对象，类型也不例外，在Java使用类型类来表示一个类型。
+所有的类型类都是Class类的实例。getClass() 会看到返回Class<?>
 

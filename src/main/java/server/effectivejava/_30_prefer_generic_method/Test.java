@@ -5,7 +5,9 @@ import java.util.Set;
 import java.util.function.UnaryOperator;
 
 public class Test {
-    private static UnaryOperator<Object> IDENTIFY_FN = (t)->t;//输入t,返回t
+
+    //cf Collections.reverseOrder 泛型单例工厂
+    private static UnaryOperator<Object> IDENTIFY_FN = (t)-> t;//输入t,返回t
     public static void main(String[] args) throws Exception {
 
     }
