@@ -36,12 +36,20 @@ public class Merge {
         }
     }
 
+    /**
+     * @param a
+     * @param lo 0
+     * @param hi 5
+     */
     private static void sort(Comparable[] a, int lo, int hi) {
         if (hi <= lo) return;
 //        int mid = (hi+lo)/2;
         int mid = lo + (hi - lo) / 2;
-        sort(a, lo, mid);
-        sort(a, mid + 1, hi);
+        for (int k = lo; k <= hi; k++)
+            aux[k] = a[k];
+
+        sort(a, lo, mid);//0,1,2
+        sort(a, mid + 1, hi);//3,4
         merge(a, lo, mid, hi);
     }
 

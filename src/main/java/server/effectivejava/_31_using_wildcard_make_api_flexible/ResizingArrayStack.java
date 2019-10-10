@@ -1,25 +1,17 @@
-package server.ds.stack;
+package server.effectivejava._31_using_wildcard_make_api_flexible;
 
-/**
- * Created by Administrator on 2019/9/6.
- */
+import java.util.Iterator;
+
 public class ResizingArrayStack<T> implements Iterable<T> {
-    public static void main(String[] args) throws Exception {
-        ResizingArrayStack<String> stack = new ResizingArrayStack<>();
-        stack.push("123");
-        stack.push("111");stack.push("111");stack.push("111");
-        stack.push("111");stack.push("111");stack.push("111");
-        stack.push("111");stack.push("111");stack.push("111");
-        stack.push("fdasdf");
-        String pop = stack.pop();
-    }
+
     private int M = 0;//局部变量的初始值是不确定的，必须显示赋值，但这里不需要
 
-    private T[] a ;//heap pollution
+    private T[] a;//heap pollution
 
     @SuppressWarnings("unchecked")
     public ResizingArrayStack() {
         this.a = (T[]) new Object[1];//默认数组size为1
+//        M = 0;
     }
 
     /**
@@ -33,7 +25,6 @@ public class ResizingArrayStack<T> implements Iterable<T> {
         for (int i = 0; i < M; i++) {
             //将原来的数组指向的对象shallow拷贝到新的数组
             temp[i] = a[i];
-            //未赋值的对象为null
         }
         a = temp;//a引用指向新开辟的数组引用
     }
@@ -48,6 +39,26 @@ public class ResizingArrayStack<T> implements Iterable<T> {
         a[M++] = item;//先做a[M]，后加M加1
     }
 
+
+    public boolean isEmpty() {
+        return M == 0;
+    }
+
+    /**
+     * 注意这里，我们可以放所有的Number子类的元素，就是？ extends Number
+     *
+     * @param it 可迭代的容器
+     */
+    public void pushAll(Iterable<? extends T> it) {
+        for (T t : it) push(t);
+    }
+
+    public void popAll(ResizingArrayStack<? super T> dst) {
+        while (!isEmpty()) {
+            dst.push(pop());
+        }
+
+    }
 
 
     /**
@@ -64,8 +75,9 @@ public class ResizingArrayStack<T> implements Iterable<T> {
         return item;
     }
 
+
     @Override
-    public server.ds.stack.Iterator<T> itertor() {
+    public Iterator<T> iterator() {
         return new ReverseArrayIterator();
     }
 
