@@ -5,10 +5,11 @@ import java.util.Map;
 
 public class Test {
     public static void main(String[] args) {
-        Map map
-                = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         int key = 11;
-        int cout =
         map.merge(key, 1, (count, incr) -> count + incr);
+//        map.merge(key, 1, Integer::sum);
+//        Map<Integer, Integer> map = new HashMap<>();
+//        map.forEach((key, value) -> map.merge(key, -1, Integer::sum));
     }
 }
