@@ -31,8 +31,8 @@ public class GenericArray<T> {
                 new GenericArray<Integer>(10);
         // This causes a ClassCastException:,原因是泛型在编译时擦除
         gai.put(1,3);
-        //Integer在编译时擦除了，运行时不知道泛型的具体类型
-//        Integer[] ia = gai.rep();
+        //
+        Integer[] ia = gai.rep();
         // This is OK:
         Object[] oa = gai.rep();
     }
