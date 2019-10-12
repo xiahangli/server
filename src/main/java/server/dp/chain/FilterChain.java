@@ -8,20 +8,23 @@ public class FilterChain implements Filter {
     public int index = 0;
 
 
-    public FilterChain addFilter(Filter filter){
+    public FilterChain addFilter(Filter filter) {
         mFilters.add(filter);
         return this;
     }
 
-
+    boolean fieldBool = true;
     @Override
+
     public void doFilter(Request request, Response response, Filter chain) {
-        if(index == mFilters.size()) return;
+        if (index == mFilters.size()) return;
         Filter filter = mFilters.get(index);
-        index ++;
+        index++;
         filter.doFilter(request, response, this);
     }
+
     public static void main(String[] argus) {
+        boolean stackBool = true;
         //要被过滤的内容
         String content = "<scrpit> 法伦功一定要灭掉，尼玛的，你妈的。中国政府真的太好了，呵呵，呵呵";
         Request request = new Request();
