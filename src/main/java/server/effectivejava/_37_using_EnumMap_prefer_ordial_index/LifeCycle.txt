@@ -1,0 +1,21 @@
+Compiled from "Plant.java"
+//这里的LifeCycle继承了Enum类，而Enum类中有ordial字段和ordial方法
+
+final class server.effectivejava._37_using_EnumMap_prefer_ordial_index.Plant$LifeCycle
+ extends java.lang.Enum<server.effectivejava._37_using_EnumMap_prefer_ordial_index.Plant$LifeCycle> {
+ //每一个枚举都是static final 只能被赋值一次
+  public static final server.effectivejava._37_using_EnumMap_prefer_ordial_index.Plant$LifeCycle ANNUAL;
+
+  public static final server.effectivejava._37_using_EnumMap_prefer_ordial_index.Plant$LifeCycle PERENNIAL;
+  public static final server.effectivejava._37_using_EnumMap_prefer_ordial_index.Plant$LifeCycle BIENIAL;
+
+  private static final server.effectivejava._37_using_EnumMap_prefer_ordial_index.Plant$LifeCycle[] $VALUES;
+
+  public static server.effectivejava._37_using_EnumMap_prefer_ordial_index.Plant$LifeCycle[] values();
+
+  public static server.effectivejava._37_using_EnumMap_prefer_ordial_index.Plant$LifeCycle valueOf(java.lang.String);
+
+  private server.effectivejava._37_using_EnumMap_prefer_ordial_index.Plant$LifeCycle();
+
+  static {};
+}
