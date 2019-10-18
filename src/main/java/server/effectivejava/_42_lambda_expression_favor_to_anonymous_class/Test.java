@@ -1,9 +1,6 @@
 package server.effectivejava._42_lambda_expression_favor_to_anonymous_class;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Administrator on 2019/10/8.
@@ -53,6 +50,12 @@ public class Test {
         Collections.sort(words, Comparator.comparingInt(String::length));
         //最好的方式：使用list自带的sort方法
         words.sort(Comparator.comparingInt(String::length));
+
+
+        int[] ints = new int[]{12,123};
+        List<Integer> list = Arrays.asList(1233, 123);
+        Collections.sort(list,Comparator.comparingInt(Integer::intValue));
+        System.out.println(list);
     }
 
     static class TestClass {

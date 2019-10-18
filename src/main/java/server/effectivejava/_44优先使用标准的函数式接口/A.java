@@ -36,7 +36,7 @@ class AA {
     }
 
     public void print() {
-        System.out.println("A");
+//        System.out.println("A");
         //todo supply有一个get方法，这里调用AA构造器中的lambda表达是的值
         System.out.println(supplier.get());
     }
@@ -44,6 +44,6 @@ class AA {
     public static void main(String[] args) {
         //todo 构造函数中传入，注意这里还没有生成AA对象
         AA a = new AA(() -> "B");
-        a.print();
+        a.print();//函数调用,触发supply的调用
     }
 }
