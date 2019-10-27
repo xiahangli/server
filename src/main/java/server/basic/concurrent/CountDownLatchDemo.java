@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 class TaskPortion implements Runnable {
     private static int counter = 0;
     private final int id = counter++;
-    private final Random rand = new Random(44);
+    private final Random rand = new Random(2);
     /**
      * 不可变的引用，该引用不能指向其他对象
      */
@@ -37,7 +37,10 @@ class TaskPortion implements Runnable {
     }
 
     private void dowork() throws InterruptedException {
+        int i = rand.nextInt(2000);
+        int i1 = rand.nextInt(2000);
         TimeUnit.MILLISECONDS.sleep(rand.nextInt(2000));
+        
         System.out.println(this + "complete");
     }
 

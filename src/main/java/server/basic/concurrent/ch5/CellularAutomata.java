@@ -14,10 +14,12 @@ public class CellularAutomata {
         this.barrier = new CyclicBarrier(count,
                 new Runnable() {
                     public void run() {
+                        //todo 计算新的值
                         mainBoard.commitNewValues();
                     }});
         this.workers = new Worker[count];
         for (int i = 0; i < count; i++)
+            //count 是任务总规模
             workers[i] = new Worker(mainBoard.getSubBoard(count, i));
     }
 

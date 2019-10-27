@@ -1,6 +1,8 @@
 package server;
 
+import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
+import server.Serverbean.User;
 import server.TestServerForClient.SerializeNameGson;
 
 import javax.servlet.ServletException;
@@ -62,17 +64,18 @@ public class FirstServlet extends HttpServlet {
 //        }
 //
 //
-//        try {
-//            //使用JSONObject的parseObject方法解析JSON字符串
-////            JSONObject jsonObject = JSONObject.parseObject(jb.toString());
-////            result = jsonObject.toJSONString();
+        try {
+            //使用JSONObject的parseObject方法解析JSON字符串
+
+//            JSONObject jsonObject = JSONObject.parseObject(new User("a"));
+//            result = jsonObject.toJSONString();
 //            Gson gson =new Gson();
 //            SerializeNameGson serializeNameGson = gson.fromJson(jb.toString(), SerializeNameGson.class);
-//
-//        } catch (Exception e) {
-//            // crash and burn
-//            throw new IOException("Error parsing JSON request string");
-//        }
+
+        } catch (Exception e) {
+            // crash and burn
+            throw new IOException("Error parsing JSON request string");
+        }
 //        //先将服务器收到的JSON字符串打印到客户端，再将该字符串转换为JSON对象然后再转换成的JSON字符串打印到客户端
 //        PrintStream out = new PrintStream(response.getOutputStream());
 //        out.println(jb.toString());
@@ -121,8 +124,8 @@ public class FirstServlet extends HttpServlet {
 
 //        try {
 //            //使用JSONObject的parseObject方法解析JSON字符串
-////            JSONObject jsonObject = JSONObject.parseObject(jb.toString());
-////            result = jsonObject.toJSONString();
+//            JSONObject jsonObject = JSONObject.parseObject(jb.toString());
+//            result = jsonObject.toJSONString();
 //            Gson gson =new Gson();
 //            SerializeNameGson serializeNameGson = gson.fromJson(jb.toString(), SerializeNameGson.class);
 //

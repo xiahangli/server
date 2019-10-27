@@ -6,10 +6,32 @@ public class RedBlackBST<Key extends Comparable<Key>,Value> {
     private static final boolean BLACK = false;
 
 
+    /**
+     *
+     * 旋转保持了红黑树的有序性和完美平衡性
+     * @param h h指向当前考察的根节点
+     * @return
+     */
     Node rotateLeft(Node h){
         Node x = h.right;//当前的右节点临时存储
-//        h.right =
+        //将h的右孩子替换成x的左孩子
+        h.right = x.left;//先变h的right,这时候x的left就可以指向h了
+        x.left = h;
+        x.color = h.color;//上面什么颜色不知道
+        //现在红色的边指向h了，原来是指向x的
+        h.color =RED;
+        x.N=h.N;
+        h.N=1+size(h.left)+size(h.right);
         return x;
+    }
+
+
+
+    public int size(Node node){
+        if (node == null)
+            return 0;
+        else
+            return size(node.left)+size(node.right)+1;
     }
 
     /**
