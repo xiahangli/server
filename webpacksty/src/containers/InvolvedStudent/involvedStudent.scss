@@ -1,0 +1,300 @@
+.bgShade {
+    position: fixed;
+    background-color: #f5f7f8;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+.involvedWrap {
+    position: absolute;
+    width: 100%;               
+    height: 100%;
+    overflow: hidden;
+}
+.searchWrap {
+    height: 1.16rem;
+    padding: .24rem .24rem .29rem;
+    background-color: #fff;
+}
+.inputWrapper {
+    width: 100%;
+    height: 0.65rem;
+    line-height: 0.65rem;
+    background-color: #f3f3f3;
+    border-radius: .3rem;  
+    padding-left:0.24rem;
+    padding-right:0.3rem;
+    position:relative;
+    .inputStyle{
+        border: none;
+        background: #f3f3f3;
+        flex:1;
+        outline-width:100%;
+        height: 0.65rem;
+        outline:none;
+        margin-left: 0.23rem;
+        font-size: .28rem;
+        color:#5a5a5a;
+        width: 5.6rem;
+        border-radius: 0;
+        position: absolute;
+    }
+}
+
+.hasChecked {
+    padding: 0 .2rem;
+    background-color: #fff;
+    .title {
+        color: #5a5a5a;
+        font-size: .24rem;
+    }
+    .checkedList {
+        height: .9rem;
+        padding-top: .22rem;
+        white-space: nowrap;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        .oneStu {
+            display: inline-block;
+            height: .48rem;
+            line-height: .48rem;
+            padding: 0 .2rem;
+            color: #fff;
+            background-color: #ccc;
+            border-radius: .04rem;
+            position: relative;
+            margin-right: .34rem;
+            .del {
+                position: absolute;
+                top: -.14rem;
+                right: -.12rem;
+                width: .36rem;
+                height: .36rem;
+                line-height: .36rem;
+                text-align: center;
+                img {
+                    width: .28rem;
+                }
+            }
+        }
+    }
+}
+.echoGrade {
+    height: .63rem;
+    line-height: .63rem;
+    padding-left: .2rem;
+    color: #999;
+    font-size: .24rem;
+}
+
+.searchResultWrapper{
+    width: 100%;
+    background: #fff;
+    overflow-y: auto;
+    position: absolute;
+    top: 3rem;
+    bottom: 1.4rem;
+    overflow-x: hidden;
+    padding-bottom: .2rem;
+    -webkit-overflow-scrolling: touch;
+}
+.oneStuRecord {
+    height: 1rem;
+    line-height: 1rem;
+    display: flex;
+    .leftIcon {
+        width: .8rem;
+        padding-left: .3rem;
+        padding-top: .06rem;
+    }
+    .checkedIcon {
+        color: #2cd18a;
+    }
+    .stuInfo {
+        flex: 1;
+        border-bottom: .01rem solid #dbdbdb;
+        vertical-align: middle;
+        display: inline-block;
+        span {
+            display: inline-block;
+            color: #5a5a5a;
+            font-size: .3rem;
+            padding-right: .1rem;
+        }
+        .name {
+            width: 2.1rem;
+            padding-right: .3rem;
+        }
+        .stuNo {
+            width: 2.76rem;
+        }
+    }
+    .stuInfo > * {
+        vertical-align: middle;
+    }
+}
+.blankWrap {
+    padding-top: 1rem;
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+}
+
+.searchPanel{
+    background: #fff;
+    display: inline-block;
+    width: 100%;
+    top: 1.16rem;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    .hrLine {
+        height: .1rem;
+        background-color: #f5f7f8;
+    }
+    .keyBoxStyle{
+        height: .88rem;
+        line-height: .88rem;
+        margin-left: .2rem;
+        font-size: .32rem;
+        border-bottom: 1px solid #dbdbdb;
+        color:#5a5a5a;
+        cursor: pointer;
+        .keywords{
+            color:#48bb7d;
+        }
+    }
+}
+
+.btnFixed{
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    height: 1.4rem;
+    padding: .3rem .35rem;
+}
+.confirmBtn{
+    width:100%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    background: #dbdbdb;
+    border-radius:.08rem;
+    font-size: .34rem;
+    color: #bbb;
+}
+.confirmBtnActive{
+    width:100%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    font-size: .34rem;
+    background: #2cd18a;
+    box-shadow: 0px 6px 10px 0px 
+		rgba(44, 209, 138, 0.35);
+    border-radius:.16rem;
+    color: #fff;
+}
+.confirmBtnActive:active{
+    background: #39b881;
+}
+.hideSureBtnClass {
+    .searchResultWrapper {
+        bottom: 0;
+    }
+    .btnFixed {
+        z-index: -1;
+    }
+}
+:global {
+    .evaiconfont{
+        color:#999;
+        font-size: 0.34rem;
+    }
+    .clearIcon{
+        position: absolute;
+        right: 0.31rem;
+        padding: 0 4px;
+    }
+}
+
+// pad样式
+@media screen and (min-width: 960px) and (orientation: landscape) {
+    .inputWrapper {
+        height: .72rem;
+        line-height: .72rem;
+        border-radius: 0;
+        .inputStyle {
+            height: .72rem;
+        }
+    }
+    .oneStuRecord {
+        .leftIcon {
+            width: 1.3rem;
+            padding-left: .72rem;
+            padding-top: .06rem;
+        }
+        .checkedIcon {
+            color: #019982;
+        }
+        .stuInfo {
+            padding-right: .48rem;
+            display: flex;
+            text-align: center;
+            .name {
+                text-align: left;
+            }
+            .stuNo {
+                flex: 1;
+            }
+            .clazzName {
+                float: right;
+                width: 2.1rem;
+            }
+        }
+    }
+    .searchResultWrapper{
+        top: 3.6rem;
+        bottom: 1.1rem;
+    }
+    .echoGrade {
+        height: .85rem;
+        line-height: .85rem;
+        padding-left: .48rem;
+        font-size: .28rem;
+    }
+    .hasChecked {
+        .checkedList {
+            height: 1.25rem;
+            padding-top: .3rem;
+            .oneStu {
+                height: .6rem;
+                line-height: .6rem;
+            }
+        }
+    }
+    .bgShade {
+        background-color: #f0f0f0;
+    }
+    .btnFixed {
+        padding: .6rem 0rem 0rem;
+    }
+    .confirmBtn {
+        background-color: #ccc;
+        color: #fff;
+        border-radius: 0;
+    }
+    .confirmBtnActive {
+        background-color: #00ba9e;
+        border-radius: 0;
+    }
+
+}

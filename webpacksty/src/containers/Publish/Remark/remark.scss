@@ -1,0 +1,246 @@
+:global {
+    .remark__wrap {
+        .am-textarea-control textarea {
+            font-size: .3rem;
+            min-height: 1.64rem;
+            line-height: .44rem;
+            color: #666;
+        }
+    }
+}
+.remark__wrap {
+    width:100%;
+    background-color: #fcfcfc;
+    padding-bottom: .2rem;
+    border: .01rem solid #e5e5e5;
+    border-top: 0;
+    margin-top: -.01rem;
+    .title {
+      height: .6rem;
+      line-height: .8rem;
+      color: #333;
+      font-size: .32rem;
+      padding: 0 .2rem;
+      span {
+          color: #999;
+          font-size: .28rem;
+      }
+    }
+    .text__wrap {
+        min-height:1.64rem;
+        padding: 0 .2rem;
+    }
+
+    .upload_container{
+        margin-bottom:0.1rem;
+        height: 1.25rem;
+        padding: 0 .2rem;
+        // 图片
+        .upload_img_wrapper{
+            margin-right: 0.1rem;
+            position: relative;
+            height: 1.25rem;
+            width: 1.25rem;
+            float: left;
+            overflow: hidden;
+            .videoImg {
+                display: inline-block;
+                width: 1.25rem;
+                height: 1.25rem;
+                text-align: center;
+                span {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    margin-left: -.24rem;
+                    margin-top: -.24rem;
+                    width: .48rem;
+                    height: .48rem;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+            .close_wrapper{
+                width: 0.36rem;
+                height: 0.36rem;
+                border-radius: 0 0 0 0.36rem;
+                background: #000000;
+                opacity: 0.6;
+                position: absolute;
+                right: 0;
+                top:0;
+                z-index: 2;
+            }
+            .hide {
+                display: none;
+            }
+            .upload_img{
+                max-width:2.5rem;
+                max-height: 2.5rem;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                z-index: 1;
+                transform: translate(-50%, -50%);
+            }
+            
+        }
+        .upload_img_wrapper:nth-child(5){
+            margin-right: 0;
+        }
+        // 默认图片
+        .add_default{
+            width:1.25rem;
+            height: 1.25rem;
+            display: inline-block;
+            background: #f5f7f8;
+            text-align: center;
+            padding-top: 0.24rem;
+            i {
+                color: #999;
+                font-size: .38rem;
+            }
+            .txt{
+                color:#999;
+                font-size: 0.24rem;
+                padding-top: .08rem;
+            }
+        }
+        .iconVideo {
+            i {
+                font-size: .48rem;
+            }
+            .txt{
+                padding-top: .0rem;
+            }
+        }
+    }
+}
+
+.association {
+    padding-left: .2rem;
+    display: inline-block;
+    margin-top: .1rem;
+    width: 100%;
+    .associationTitle {
+        border-top: .01rem solid #e5e5e5;
+        font-size: .28rem;
+        color: #666;
+        height: .88rem;
+        line-height: .88rem;
+    }
+}
+
+.history__time {
+    padding:  0 .2rem;
+    font-size: .28rem;
+    margin-bottom: .3rem;
+    text-align: center;
+    height: .24rem;
+    line-height: .24rem;
+    color: #ff9900;
+    padding-top: .1rem;
+}
+.history_val {
+    margin: 0 .2rem;
+    display: inline-block;
+}
+
+:global {
+    .icon-evaluation-zhaopian.icon-evaluation-zhaopian,.icon-evaluation-shipin.icon-evaluation-shipin{
+        font-size: 0.3rem;
+        color:#999999;
+        width: 0.38rem;
+        height: 0.3rem;
+        margin-bottom: .1rem;
+    }
+    .evaClose{
+        width: 0.14rem;
+        height: 0.14rem;
+        font-size: 0.14rem!important;
+        color: #fff!important;
+        position: absolute;
+        top:0.04rem;
+        right: 0.08rem;
+    }
+    .am-list-item.am-list-item{
+        padding-left: 0;
+    }
+    .textWrap textarea::-webkit-input-placeholder {
+        font-family: "微软雅黑"!important;
+    }
+    .textWrap .am-list-item {
+        background-color: #fcfcfc;
+    }
+}
+
+// pad样式
+@media screen and (min-width: 960px) and (orientation: landscape) {
+    .remark__wrap {
+        .title {
+            padding:  0 .48rem;
+        }
+        .text__wrap {
+            padding: 0 .48rem;
+        }
+        
+        .upload_container{ 
+            padding: 0 .48rem;
+            margin-bottom: .2rem;
+            height: 1.77rem;
+
+            //  图片
+            .upload_img_wrapper {
+                width: 1.77rem;
+                height: 1.77rem; 
+                margin-right: .2rem;
+                .videoImg {
+                    width: 1.77rem;
+                    height: 1.77rem;
+                }
+                .upload_img{
+                    max-width:3.54rem;
+                    max-height: 3.54rem;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    z-index: 1;
+                    transform: translate(-50%, -50%);
+                }
+                .close_wrapper {
+                    width: .42rem;
+                    height: .42rem;
+                }
+            }
+
+            // 默认图片 
+            .add_default{
+                width: 1.77rem;
+                height: 1.77rem;
+                i {
+                    font-size: .54rem;
+                }
+                .txt {
+                    padding-top: .2rem;
+                }
+            }
+        }
+        .association {
+            padding-left: .48rem;
+            margin-top: .36rem;
+        }
+    }
+    .history__time {
+        padding-bottom: .2rem;
+    }
+  
+    :global {
+        .evaClose{
+            font-size: 0.18rem!important;
+            top:0.06rem;
+            right: 0.14rem;
+        }
+    }
+}

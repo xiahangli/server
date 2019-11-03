@@ -1,0 +1,51 @@
+.operation {
+    display: inline-block;
+    border: .011rem solid #ccc;
+    text-align: center;
+    box-sizing: border-box;
+    vertical-align: top;
+    position: relative;
+    cursor: pointer;
+    user-select: none; 
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: red;
+        opacity: 0;
+    }
+    i {
+        color: #999;
+    }
+}
+.subtract {
+    border-radius: .08rem 0 0 .08rem; 
+}
+.add {
+    border-radius: 0 .08rem .08rem 0;
+}
+.disabled {
+    i {
+        color: #dbdbdb;
+    }
+}
+.value {
+    width: 1.45rem;
+    height: .72rem;
+    vertical-align: top;
+    line-height: .72rem;
+    text-align: center;
+    font-size: .44rem;
+    color: #fe533a;
+    border: 0px;
+    border-top: .01rem solid #ccc;
+    border-bottom: .01rem solid #ccc;
+    box-sizing: border-box;
+    border-radius: 0px;
+    -webkit-appearance: none;
+}

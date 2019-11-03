@@ -1,0 +1,211 @@
+//  公共的样式
+.chartTitle {
+    color: #333;
+    font-size: .28rem;
+    font-weight: bold;
+}
+.wrap {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.chartWrap {
+    padding: 0 20px;
+    position: absolute;
+    top: 1.76rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    overflow-y: auto;
+    background-color: #fff;
+    padding-top: .4rem;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+.unit {
+    color: #666;
+    font-size: .24rem;
+    margin-left: .08rem;
+}
+.top {
+    padding: .46rem 0 .26rem 0;
+}
+.commonPanel {
+    float: right;
+    margin-top: -.1rem;
+    span {
+        display: inline-block;
+        width: 1.07rem;
+        height: .46rem;
+        color: #999;
+        font-size: .24rem;
+        text-align: center;
+        border: 1px solid #2cd18b;
+        line-height: .46rem;
+        margin-left: -.02rem;
+    }
+    span:first-child {
+        border-radius: 6px 0px 0px 6px;
+    }
+    span:last-child {
+        border-radius: 0px 6px 6px 0px ;
+    }
+    .curTab {
+        background-color: #39b881;
+        color: #fff;
+    }
+}
+.hrBlock {
+    width: 100%;
+    background-color: #f5f7f8;
+    height: .2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.bgShade {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 1.76rem;
+    height: .1rem;
+    background: rgba(255,0,0,.3)
+    img {
+        height: .1rem;
+    }
+}
+
+.minusCount {
+    border-bottom: none!important;
+}
+
+.blank {
+    padding-top: 4rem;
+}
+:global {
+    #chart,#countStatisticChart,#scoreStatisticsChart,#scoreDistributionChart,#weeklyTrendChart {
+        width: 100%;
+        user-select: none;
+    }
+    #chartWrap {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+}
+
+.noMore {
+    padding: .32rem 0;
+    text-align: center;
+    color: #999;
+    font-size: .24rem;
+    span {
+        position: relative;
+    }
+    span:before, span::after {
+        content: '';
+        position: absolute;
+        width: .2rem;
+        height: .01rem;
+        background-color: #999;
+        top: .16rem;
+    }
+    span:before {
+        left: -.42rem;
+    }
+    span:after {
+        right: -.42rem;
+    }
+}
+
+.weeklyReport,.countStatistics,.commonChart {
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: .46rem;
+    min-height: 2.5rem;
+}
+
+.sBlankImg {
+    img {
+        width: 2.5rem!important;
+        height: 2.5rem!important;
+    }
+    div {
+        font-size: .24rem!important;
+    }
+}
+
+.loading {
+    text-align: center;
+    line-height: 2.5rem;
+    img {
+        width: .8rem;
+        height: .8rem;
+        margin-top: 1rem;
+    }
+}
+
+// 本周概况图表样式
+.weeklyReport {
+    .totalScore {
+        display: flex;
+        li {
+            flex: 1;
+            text-align: center;
+            p {
+                color: #666;
+                font-size: .3rem;
+                margin-bottom: .26rem;
+                font-weight: bold;
+            }
+            span {
+                color: #999;
+                font-size: .3rem;
+            }
+        }
+    }
+    padding-bottom: .46rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+
+//  次数统计样式
+.countStatistics {
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: .46rem;
+    overflow-x: hidden;
+    .filter {
+        float: right;
+        color: #666;
+        font-size: .24rem;
+        div,span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .countType {
+            color: #2cd18a;
+            font-size: .28rem;
+            margin-left: .32rem;
+            font-weight: bold;
+            position: relative;
+            &:before {
+                position: absolute;
+                content: "";
+                left: -12px;
+                top: -12px;
+                bottom: -12px;
+                right: -12px;
+            }
+        }
+
+        i {
+            margin-left: .16rem;
+            font-weight: normal;
+            font-size: .2rem;
+            vertical-align: 10%;
+        }
+    }
+}

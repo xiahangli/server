@@ -1,6 +1,6 @@
 // import React from 'react';
 import Loadable from "react-loadable";
-import Loading from 'COMPONENTS/Loading/index1.jsx';
+import Loading from '../components/Loading/index1.jsx';
 const timeout = 1000;
 //文件按需加载批处理
 // export const Home=Loading;

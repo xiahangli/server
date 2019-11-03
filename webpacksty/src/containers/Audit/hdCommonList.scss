@@ -1,0 +1,21 @@
+.listWrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+.leftList {
+    width: 6.6rem;
+    float: left;
+    height: 100%;
+    overflow-y: auto;
+    border-right: .01rem solid #d9d9d9;
+    background-color: #fff;
+}
+.rightDetail {
+    margin-left: 6.6rem;
+    height: 100%;
+    position: relative;
+}

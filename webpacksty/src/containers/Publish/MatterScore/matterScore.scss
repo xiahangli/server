@@ -1,0 +1,128 @@
+.sselect__wrap {
+    background-color: #fff;
+}
+.score {
+    height: 1.2rem;
+    line-height: 1.2rem;
+    background-color: #fff;
+    padding: 0 .2rem;
+    border-bottom: .01rem solid #dbdbdb;
+    margin-top: -.1rem;
+    .score__title {
+        margin-right: .2rem;
+        font-size: .32rem;
+        margin-top: -.1rem;
+        font-weight: bold;
+        color: #333;
+    }
+    .score__val {
+        color: #fe533a;
+        font-size: .48rem;
+        float: right;
+        min-width: 1rem;
+        height: .66rem;
+        line-height: .28rem;
+        background: url(../../../assets/images/scoreBg.png) no-repeat left bottom;
+        background-size: 100%;
+        margin-top: .3rem;
+        text-align: center;
+    }
+}
+.standard__wrap {
+    padding: 0 .3rem;
+    .standard__title {
+        color: #999;
+        font-size: .3rem;
+        height: .88rem;
+        line-height: .88rem;
+    } 
+}
+.standard__item {
+    position: relative; 
+    display: inline-block;
+    margin-right: .2rem;
+    margin-bottom: .3rem;
+    .standard__item_name {
+        font-size: .26rem;
+        color: #999;
+        display: inline-block;
+        padding: 0 .2rem;
+        height: .66rem;
+        line-height: .66rem;
+        border: 1px solid #dbdbdb;
+        border-radius: .04rem;
+    }
+    .standard__item_score {
+        position: absolute;
+        display: inline-block;
+        min-width: .32rem;
+        height: .32rem;
+        line-height: .32rem;
+        text-align: center;
+        color: #5a5a5a;
+        top: -.1rem;
+        right: -.1rem;
+        font-size: .16rem;
+        border-radius: 50%;
+        z-index: 1;
+        background-color: #ccc;
+        color: #fff;
+        border: 1px solid transparent;
+        padding: 0 .03rem;
+    }
+ } 
+ .standard__item_active {
+     .standard__item_name {
+         background: #48bb7d;
+         color: #fff;
+         border: 1px solid transparent;
+     }
+     .standard__item_score {
+         color: #48bb7d;
+         background-color: #fff;
+         border: 1px solid #48bb7d;
+     }
+ }
+
+.have__evaluation_wrap {
+    background-color: #fff;
+    padding: 0 .3rem .1rem;
+    .title {
+        font-size: .3rem;
+        color: #999;
+        margin-bottom: .3rem;
+    }
+    .have__evaluation_item {
+        color: #999;
+        font-size: .24rem;
+        display: inline-block;
+        margin-right: .2rem;
+        margin-bottom: .2rem;
+    }
+}
+
+// pad
+@media screen and (min-width: 960px) and (orientation: landscape) {
+    .score {
+        padding: 0 .36rem;
+        border-bottom: .03rem solid #019982;
+        .score__title {
+            color: #019982;
+        }
+    }
+    .standard__wrap {
+        padding: 0 .36rem;
+    }
+    .standard__item_active {
+        .standard__item_name {
+            background: #ccebe6;
+            color: #019982;
+            border-color: transparent;
+        }
+        .standard__item_score {
+            color: #019982;
+            background-color: #fff;
+            border: 1px solid #019982;
+        }
+    }
+}

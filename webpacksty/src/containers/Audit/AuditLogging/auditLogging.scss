@@ -1,0 +1,53 @@
+
+.shadeImg {
+    position: fixed;
+    top: .86rem;
+    height: .1rem;
+    z-index: 1;
+    img {
+        height: .1rem;
+        width: 100%;
+        margin-bottom: .2rem;
+        z-index: 1;
+    }
+}
+
+.auditList {
+    position: absolute;
+    top: .86rem;
+    bottom: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.blankWrap {
+    padding-top: 3rem;
+}
+.loading,.refresh{
+    height: .8rem;
+    text-align: center;
+    line-height: .6rem;
+    .loadMore {
+        .loadingImg{
+            width: 0.4rem;
+            vertical-align: middle;
+            margin-right: .1rem;
+        }
+    }
+    p,.loadMoreText {
+        color: #999;
+    }
+}
+.refresh {
+    line-height: 0rem;
+    font-size: .24rem;
+}
+
+.bgShade {
+    position: fixed;
+    background-color: #f5f7f8;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}

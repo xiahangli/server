@@ -1,0 +1,83 @@
+.queryParams {
+    width: 7.77rem;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+}
+.oneQuery {
+    padding: .3rem .48rem .24rem 0;
+    margin-left: .48rem;
+    border-bottom: 1px solid #e8e8e8;
+    .title {
+        color: #666;
+        font-size: .28rem;
+        margin-bottom: .22rem;
+    }
+    .statusItem {
+        display: inline-block;
+        padding: 0 .26rem;
+        height: .6rem;
+        line-height: .6rem;
+        background-color: #ebebeb;
+        color: #999;
+        border-radius: .06rem;
+        margin-right: .24rem;
+    }
+    .statusItem:last-child {
+        margin-right: 0;
+    }
+    .activeStatus {
+        color: #019982;
+        background-color: #ccebe6;
+    }
+    .clearTime {
+        color: #00ba9e;
+        font-size: .24rem;
+        text-align: right;
+        margin-bottom: .3rem;
+        i {
+            margin-right: .08rem;
+        }
+    }
+    .timeVal {
+        float: right;
+        color: #999;
+        i {
+            font-size: .16rem;
+        }
+    }
+}
+.btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    span {
+        display: inline-block;
+        width: 50%;
+        height: .8rem;
+        line-height: .8rem;
+        text-align: center;
+        font-size: .3rem;
+    }
+    .cancel {
+        background-color: #f0f0f0;
+        color: #999;
+    }
+    .confirm {
+        background-color: #019982;
+        color: #fff;
+    }
+}
+:global {
+    .queryParams {
+        .commonMenu {
+            position: relative;
+        }
+        .twoColumnsMenu {
+            // height: 4rem!important;
+        }
+    }
+}

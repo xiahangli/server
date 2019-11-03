@@ -1,0 +1,78 @@
+@import 'STYLES/base.scss';
+.targetTypeWrap {
+    padding-right: .2rem;
+    background-color: #fff;
+    border-bottom: .01rem solid #e5e5e5;
+}
+.targetType {
+    height: .86rem;
+    line-height: .86rem;
+    padding-left: .3rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    span {
+        color: #666;
+        font-size: .3rem;
+        max-width: 1.52rem;
+        display: inline-block;
+        margin-right: .7rem;
+    }
+    span:last-child {
+        margin-right: .3rem;
+    }
+    .curType {
+        color: #39b881;
+        position: relative;
+        font-weight: bold;
+    }
+    .curType:after {
+        content: "";
+        position: absolute;
+        width: .56rem;
+        height: .04rem;
+        background-color: #39b881;
+        bottom: 0;
+        left: 50%;
+        margin-left: -.28rem;
+
+    }
+}
+.queryParams {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    height: 1.76rem;
+}
+.commonMenu {
+    top: 1.72rem;
+}
+.weekMenu {
+    height: 4rem!important;
+}
+.weeklyTypeMenu {
+    height: 1.6rem!important;
+}
+.bgShade {
+    background: rgba(0,0,0,.4);
+    position: fixed;
+    top: 1.72rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+:global {
+    .gradeMenu .am-flexbox .am-flexbox-item:first-child .am-list .am-list-body {
+        background-color: #fff!important;
+    }
+    .weeklyTypeMenu .am-list-body {
+        height: 1.6rem!important;
+    }
+    .weeklyTypeMenu .am-list-item {
+        min-height: .8rem!important;
+    }
+
+}
