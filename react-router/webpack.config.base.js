@@ -143,7 +143,7 @@ module.exports = {
         //     "window.jQuery": "jquery"
         // }),
         new HtmlWebpackPlugin({
-            template: "./app/index.html",
+            template: "./src/index.html",
             filename: "index.html",
             minify: true,
             inject: true
