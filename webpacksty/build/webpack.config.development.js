@@ -19,24 +19,11 @@ module.exports = merge(base, {
         contentBase: "./dist",
         hot: true,
         disableHostCheck: true,
-        // host: '192.168.70.123',
-        // proxy: {
-        // 	'/auth': {
-        // 	  target: 'https://evaluation.leke.cn',
-        // 	  changeOrigin: true,
-        // 	  secure: false, // 接受 运行在 https 上的服务
-        // 	}
-        // }
-
     },
     plugins: [
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.ProvidePlugin({
-            // $: 'jquery',
-            // jQuery: 'jquery',
-            // 'window.jQuery': 'jquery',
-            // 'window.Tether': 'tether'
         })
     ],
     module: {
@@ -82,6 +69,6 @@ module.exports = merge(base, {
                 ]
             }
         ]
-		
+
     }
 });

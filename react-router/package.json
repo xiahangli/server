@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --devtool eval --progress --colors --content-base build"
+    "local-build": "rimraf ./dist/* && cross-env NOT_RELEASE=true IS_LOCAL=true webpack --config webpack.config.js  --progress",
+    "dev": "webpack-dev-server --config ./webpack.config.development.js --open",
+    "start": "serve dist"
   },
   "keywords": [],
   "author": "",
@@ -15,12 +17,18 @@
     "react-dom": "^16.11.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "babel-core": "6.26.3",
+    "babel-loader": "7.1.5",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "cross-env": "^6.0.3",
+    "html-webpack-plugin": "^3.2.0",
+    "rimraf": "3.0.0",
+    "serve": "^11.2.0",
+    "webpack": "4.41.2",
+    "webpack-cli": "3.3.10",
+    "webpack-dev-server": "3.9.0",
+    "webpack-merge": "^4.2.2",
+    "webpack-require-http": "^0.4.3"
   }
 }

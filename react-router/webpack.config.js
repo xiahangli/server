@@ -1,10 +1,13 @@
 var path = require('path');
 var webpack = require('webpack');
 module.exports = {
-    entry: ['webpack/hot/dev-server', path.resolve(__dirname, './app/main.js')],
+    entry: {
+        bundle: [path.resolve(__dirname, './app/main.js')]
+    },
     output: {
-        path: path.resolve(__dirname, './build'),
-        filename: 'bundle.js',
+        path: path.resolve(__dirname, './dist'),
+        filename: 'js/[name].[chunkhash].js',
+        chunkFilename: "js/[name].[chunkhash:5].js",
         publicPath: '/'
     },
     devServer: {
@@ -20,7 +23,8 @@ module.exports = {
             }
         ],
     },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin()
-    ]
+    //热更新(HMR)不能和[chunkhash]同时使用。
+    // plugins: [
+    //     new webpack.HotModuleReplacementPlugin()
+    // ]
 };
