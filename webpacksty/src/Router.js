@@ -18,6 +18,8 @@ const BasicRoute = () => (
 //     <HashRouter>
 //         <div>
 //             <Nav/>
+//如果我们希望一次只渲染一个路径组件，
+// 可以使用 <switch> 标签。它按顺序检查每个路径的匹配并在找到第一个匹配后停止
 //             <Switch>
 //                 <Route exact path="/" component={Jsdemo} />
 //                 <Route  path="/Jsdemob" component={Jsdemob} />
