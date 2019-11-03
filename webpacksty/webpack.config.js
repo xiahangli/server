@@ -12,7 +12,7 @@ module.exports = {
     devServer: {
         port: 3000,
         progress: true,//显示进度
-        contentBase: './build',
+        contentBase: './dist',
         open: true,
     },
     //webpack 4一下不需要mode
@@ -37,7 +37,7 @@ module.exports = {
     //对输出目录进行配置
     output: {
         //__dirname表示当前文件夹的目录
-        path: path.resolve(__dirname, 'build'), //打包文件的输出路径
+        path: path.resolve(__dirname, 'dist'), //打包文件的输出路径
         //[]为引用,这里[hash:8]代表截断hash长度为8，下面的两个文件hash值是一样的，可以改成chunkHash
         filename: '[name].js' //打包文件名
     },

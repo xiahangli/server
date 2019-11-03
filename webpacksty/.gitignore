@@ -1,0 +1,6 @@
+/node_modules/
+.project
+*.log.*
+/sheet/
+/dist/
+package-lock.json
