@@ -1,0 +1,8 @@
+{
+    "extends": [
+        "@cnstrong/eslint-config-cnstrong-react"
+    ],
+    "rules": {
+        "no-magic-numbers": 0
+    }
+}
