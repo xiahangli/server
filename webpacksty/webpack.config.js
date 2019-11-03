@@ -9,13 +9,14 @@ let HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
     //entry是入口
     entry: './src/index.js', //相对路径等价于
-    devServer:{
-      port :3000,
-      progress : true,//显示进度
-      contentBase:'./build',
+    devServer: {
+        port: 3000,
+        progress: true,//显示进度
+        contentBase: './build',
         open: true,
     },
-    mode: 'development',
+    //webpack 4一下不需要mode
+    // mode: 'development',
     // entry:{
     //     //多个入口
     //     main1: './src/index.js',
@@ -23,9 +24,9 @@ module.exports = {
     // },
     devServer: {
         //配置转发代理端口,解决跨域问题
-        proxy:{
-            '/api/user':{
-              target:  'http://localhost:3000', //
+        proxy: {
+            '/api/user': {
+                target: 'http://localhost:3000', //
                 // rootpathRewriteUrls: {'/api':''}
             }
         }
@@ -40,37 +41,40 @@ module.exports = {
         //[]为引用,这里[hash:8]代表截断hash长度为8，下面的两个文件hash值是一样的，可以改成chunkHash
         filename: '[name].js' //打包文件名
     },
-    plugins:[
+    plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: 'index.html',
             minify: {
-                removeAttributeQuotes:true,
-                collapseWhitespace:true
+                removeAttributeQuotes: true,
+                collapseWhitespace: true
 
             },
-            hash:true
+            hash: true
         })
     ],
-    module:{//必须配置moudle，不然css无法yoga
-        rules:[//正则,以css结尾， css-loader加载器
-            {test: /\.css$/,use:[
+    module: {//必须配置moudle，不然css无法yoga
+        rules: [//正则,以css结尾， css-loader加载器
+            {
+                test: /\.css$/,
+                use: [
                     {
-                      loader:  'style-loader',
-                      options:{
-                          //插入到顶部
-                          // insert:'top'
-                      }
+                        loader: 'style-loader',
+                        options: {
+                            //插入到顶部
+                            // insert:'top'
+                        }
                     },
 
                     'css-loader'
                 ]
             },
-            {test: /\.less$/,
-                use:[
+            {
+                test: /\.less$/,
+                use: [
                     {
-                        loader:  'style-loader',
-                        options:{
+                        loader: 'style-loader',
+                        options: {
                             //插入到顶部
                             // insert:'top'
                         }
@@ -81,17 +85,19 @@ module.exports = {
                 ]
             }
             ,
-            // {test:/\.jsx?/i,
-            //     use:{
-            //     loader:'babel-loader',
-            //         options:{
-            //         presets:['@babel/preset-react']
-            //         }
-            //     }
-            //
-            // }
+            //babel加载器
+            {
+                test: /\.js$/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-react']
+                    }
+                }
+
+            }
         ]
     },
 
-    devtool:'source-map'//运行时还原源码
-}
+    devtool: 'source-map'//运行时还原源码
+};
