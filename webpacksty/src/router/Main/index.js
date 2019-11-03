@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Route, Switch} from "react-router-dom";
 import {withRouter} from "react-router";
-import {routerConfig} from 'ROUTER/config';
+import {routerConfig} from '../../router/config';
 // import commonFn from 'UTILS/commonFn';
 import 'UTILS/zhcn_moment';
 import "./sass/index.scss";

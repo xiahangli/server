@@ -1,6 +1,6 @@
 import {Home, EvaluationObject, InvolvedStudent, Publish, EvaluationDetail,
     IReleased, HdIReleased, ToAudit, HdToAudit, AuditLogging, HdAuditLogging, WeeklyReport, 
-    HaveRead, HdMyRecords, Test} from 'ROUTER/index';
+    HaveRead, HdMyRecords, Test} from '../router/index';
 const routerConfig = [
     {
         path: '/',
