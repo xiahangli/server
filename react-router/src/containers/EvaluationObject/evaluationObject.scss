@@ -1,0 +1,282 @@
+.bg__shade {
+    position: fixed;
+    background-color: #f5f7f8;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+.studenObjtWrap {
+    position: absolute;
+    width: 100%;               
+    height: 100%;
+    overflow: hidden;
+}
+.searchTopWrapper{
+    width:100%;
+    .selectClazz {
+        width: 100%;
+        background-color: #fff;
+        border-bottom: 1px solid #dbdbdb;
+        cursor: pointer;
+    }
+    .resultTitle{
+        font-size: 0.28rem;
+        color: #999999;
+        height: .64rem;
+        line-height: .64rem;
+        padding-left: .2rem;
+    }
+}
+.blankWrap {
+    position: absolute;
+    bottom: 0;
+    top: 2.84rem;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding-top: 2rem;
+}
+.inputBigWrap {
+    padding: .2rem .25rem;
+    height: 1rem;
+    background-color: #fff;
+    margin-bottom: .2rem;
+    .inputWrapper {
+        width: 100%;
+        height: 0.65rem;
+        line-height: 0.65rem;
+        background-color: #f3f3f3;
+        border-radius: .3rem;  
+        padding-left:0.24rem;
+        padding-right:0.3rem;
+        position:relative;
+        .inputStyle{
+            border: none;
+            background: #f3f3f3;
+            flex:1;
+            outline-width:100%;
+            height: 0.65rem;
+            outline:none;
+            margin-left: 0.23rem;
+            font-size: .28rem;
+            color:#5a5a5a;
+            width: 5.6rem;
+            border-radius: 0;
+            position: absolute;
+        }
+    }
+}
+
+.searchResultWrapper{
+    width: 100%;
+    background: #f5f7f8;
+    overflow-y: auto;
+    position: absolute;
+    top: 2.84rem;
+    bottom: 1.4rem;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    .loading{
+        height: 1.1rem;
+        line-height: 1.1rem;
+        text-align: center;
+        background-color: #fff;
+        .loadMore {
+            .loadingImg{
+                width: 0.4rem;
+                vertical-align: middle;
+                margin-right: .1rem;
+            }
+        }
+        p,.loadMoreText {
+            color: #999;
+        }
+    }
+    // 滚轴处理
+    .searchResultScroll{
+        padding-left: 0.2rem;
+        border-bottom:1px solid #dbdbdb;
+        background-color: #fff;
+    }
+    .primeResultItemWrapper{
+        width:100%;
+        margin-left: 0.1rem;
+        display: flex;
+        align-items: center;
+        height: 1rem;
+        line-height: 1rem;
+        i {
+            font-size: .34rem;
+            color: #ccc;
+        }
+        .checked {color: #2cd18a;}
+        .infoContainer{
+            height: 100%;
+            flex: 1;
+            margin-left: 0.23rem;
+            padding-right: 0.3rem;
+            font-size: 0.28rem;
+            color: #5a5a5a;
+            border-bottom: 1px solid #dbdbdb;
+            .leftInfo {
+                font-size: .28rem;
+                color: #5a5a5a;
+                display: flex;
+                overflow: hidden;
+                span {
+                    display: inline-block;
+                }
+                .names {
+                    width: 2.1rem;
+                    padding-right: .3rem;
+                }
+                .stuNo {
+                    width: 1.76rem;
+                    color: #999;
+                }
+                .clazzNames {
+                    flex: 1;
+                    color:#999;
+                    font-size: 0.24rem;
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    .primeResultItemWrapper:last-child div.infoContainer:last-child{
+        border-bottom:0px solid transparent;
+    }
+}
+.searchResultWrapperTop {
+    top: 2.21rem;
+}
+.nullPage{
+    background:#fff;
+    padding-top: 2.84rem;
+    font-size: 0.3rem;
+    color: #999;
+    text-align: center;
+    .nullText{
+        padding-top: 0.3rem;
+    }
+}
+.btnFixed{
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    height: 1.4rem;
+    padding: .3rem .35rem;
+}
+
+.confirmBtn{
+    width:100%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    background: #dbdbdb;
+    border-radius:.08rem;
+    font-size: .34rem;
+    color: #bbb;
+}
+.confirmBtnActive{
+    width:100%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    font-size: .34rem;
+    background: #2cd18a;
+    border-radius:.08rem;
+    color: #fff;
+}
+.confirmBtnActive:active{
+    background: #39b881;
+}
+.keyBoxStyleWrapper{
+    background: #fff;
+    display: inline-block;
+    width: 100%;
+    top: 1.1rem;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    .keyBoxStyle{
+        height: .88rem;
+        line-height: .88rem;
+        margin-left: .2rem;
+        font-size: .32rem;
+        border-bottom: 1px solid #dbdbdb;
+        color:#5a5a5a;
+        cursor: pointer;
+        .keywords{
+            color:#48bb7d;
+        }
+    }
+}
+
+.hideSureBtnClass {
+    .searchResultWrapper {
+        bottom: 0;
+    }
+    .btnFixed {
+        z-index: -1;
+    }
+}
+
+:global {
+    .evaiconfont{
+        color:#999;
+        font-size: 0.28rem;
+    }
+    .clearIcon{
+        position: absolute;
+        right: 0.31rem;
+        padding: 0 4px;
+    }
+    .selectClazz {
+        .am-list-item {
+            height: 1rem;
+            padding: 0 .2rem!important;
+        }
+    }
+}
+// pad样式
+@media screen and (min-width: 960px) and (orientation: landscape) {
+    .searchResultWrapper{
+        .primeResultItemWrapper{
+            .checked {color: #019982;}
+        }
+    }
+    .inputBigWrap {
+        .inputWrapper {
+            border-radius: 0;
+        }
+    }
+    .searchResultWrapper {
+        bottom: 1.11rem;
+    }
+    .btnFixed {
+        height: 1.11rem;
+        padding: .3rem 0 0 0;
+    }
+    .confirmBtn {
+        background-color: #ccc;
+        color: #fff;
+    }
+    .confirmBtnActive {
+        background-color: #00ba9e;
+        color: #fff;
+    }
+    .stuNo {
+        flex: 1!important;
+        text-align: center!important;
+    }
+    .bg__shade {
+        background-color: #f0f0f0;
+    }
+}

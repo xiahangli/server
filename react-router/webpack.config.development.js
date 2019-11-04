@@ -3,7 +3,7 @@ const webpack = require("webpack");
 const base = require("./webpack.config.base");
 const merge = require("webpack-merge");
 module.exports =merge(base, {
-    entry: "./src/main.js",
+    entry: "./src/mount.js",
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "js/[name].js",

@@ -1,0 +1,244 @@
+.batchObject {
+    background-color: #fff;
+    padding: 0 .2rem .2rem;
+    position: relative;
+}
+.objectType {
+    margin-right: .54rem;
+    width: 1.82rem;
+    height: 100%;
+    display: inline-block;
+}
+.stuType {
+    padding-top: .1rem;
+    .gradeName {
+        color: #999;
+        font-size: .24rem;
+    }
+}
+.objectOneLine {
+    line-height: .88rem;
+}
+.nowScore {
+    display: inline-block;
+    width: 2.8rem;
+}
+.edit {
+    width: .68rem;
+    margin-right: .2rem;
+    padding: .3rem .2rem;
+    height: .88rem;
+    vertical-align: bottom;
+    i {
+        color: #2cd18a;
+        font-size: .28rem;
+    }
+
+}
+.remarkText {
+    width: .62rem;
+}
+
+.batchTitle {
+    font-size: .3rem;
+    background-color: #f2faf7;
+    vertical-align: middle;
+    .objectType {
+        margin-left: .76rem;
+    }
+}
+
+.oneBatchContent {
+    position: relative;
+}
+
+.batchTitle, .batchContentWrap  {
+    border: .01rem solid #e5e5e5;
+    color: #666;
+    height: .88rem;
+    padding-right: .3rem;
+    span {
+        display: inline-block;
+    }
+}
+
+.batchContentWrap {
+    position: relative;
+    // overflow: hidden;
+    margin-top: -.02rem;
+    .nowScore {
+        vertical-align: top;
+        .scoreRank {
+            vertical-align: top;
+            margin-top: .2rem;
+        }
+    }
+    .remarkText {
+        color: #2cd18a;
+        font-size: .28rem;
+        display: inline-block;
+        height: .88rem;
+        line-height: .88rem;
+    }
+    .delHand {
+        display: inline-block;
+        width: .56rem;
+        height: .88rem;
+        line-height: .88rem;
+        padding-left: .2rem;
+        padding-right: .2rem;
+        margin-right: .2rem;
+        i {
+            color: #fe533a;
+            font-size: .28rem;
+        }
+    }
+}
+
+.batchContent {
+    font-size: .28rem;
+    white-space: nowrap;
+    position: relative;
+}
+.batchContent > * {
+    vertical-align: middle;
+}
+.remark {
+    background-color: #fcfcfc;
+}
+.delBg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+    opacity: 0;
+    z-index: 2;
+}
+.score__val {
+    color: #fe533a;
+    font-size: .32rem;
+    min-width: 1rem;
+    height: .88rem;
+    background: url(../../../assets/images/scoreBg.png) no-repeat left 88%;
+    background-size: 100%;
+    padding-top: .16rem;
+    text-align: center;
+    font-family: "ArialMT";
+}
+.delText {
+    color: #333;
+    font-size: .36rem;
+    padding: 20px;
+}
+:global {
+    .contentModalWrap {
+        .am-modal-transparent {
+            width: 5.9rem!important;
+        }
+        .am-modal-content {
+            text-align: left!important;
+        }
+        .am-modal-transparent .am-modal-content .am-modal-body {
+            padding: 0!important;
+        }
+    }
+    
+    .am-modal-button-group-h .am-modal-button:first-child {
+        color: #999!important;
+    }
+}
+
+@media screen and (min-width: 960px) and (orientation: landscape) {
+    .batchObject {
+        padding: 0 .48rem .2rem;
+    }
+    .batchTitle {
+        line-height: .88rem;
+        .objectType {
+            margin-left: 1.62rem;
+        }
+    }
+    
+    .stuType {
+        padding-top: .1rem;
+        .gradeName {
+            padding-top: .1rem;
+        }
+    }
+    .batchContentWrap {
+        height: 1.35rem;
+        padding-right: .6rem;
+        .delHand  {
+            width: 1.31rem;
+            padding-left: .48rem;
+            height: 1.35rem;
+            line-height: 1.35rem;
+            i {
+                color: #fe533a;
+                font-size: .36rem;
+            }
+        }
+        .nowScore {
+            line-height: 1.35rem;
+            margin-top: -.2rem;
+            .scoreRank {
+                margin-top: .6rem;
+            }
+        }
+        .remark {
+            float: right;
+        }
+        .remarkText {
+            margin-right: 0;
+            height: 1.35rem;
+            line-height: 1.35rem;
+            position: absolute;
+            right: .3rem;
+            color: #00ba9e;
+        }
+    }
+    .score__val {
+        height: 1.35rem;
+        padding-top: 0;
+    }
+    .edit {
+        height: 1.35rem;
+        padding: .1rem .3rem;
+        i {
+            color: #00ba9e;
+        }
+    }
+    .nowScore {
+        width: 5.08rem;
+        
+    }
+    .objectType {
+        width: 5.69rem;
+    }
+    .remarkText {
+        width: .8rem;
+        float: right;
+        margin-right: .5rem;
+    }
+    .delText {
+        padding: 50px 20px;
+    }
+
+    :global {
+        .delObjModalWrap {
+            .am-modal-transparent {
+                width: 6.2rem!important;
+            }
+        }
+        .contentModalWrap {
+            .am-modal-transparent {
+                width: 7.2rem!important;
+            }
+        }
+        .am-modal-button-group-h .am-modal-button:first-child {
+            color: #333!important;
+        }
+    }
+}

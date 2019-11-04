@@ -1,0 +1,234 @@
+.evaluationDetail {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    background-color: #fff;
+    border-top: .03rem solid #f5f7f8;
+    z-index: 2;
+    .eva {
+        min-height: 100%;
+        padding-bottom: 2.7rem;
+        position: relative;
+    }
+    padding: 0 .3rem;
+    .topInfo {
+        padding-top:.36rem;
+        .info {
+            font-size: .32rem;
+            color: #444;
+            font-weight: bold;
+            margin-right: .3rem;
+        }
+        .haveReadNum {
+            color: #2cd18a;
+            font-size: .28rem;
+            float: right;
+            position: relative;
+            i {
+                font-size: .2rem;
+                margin-left: .02rem;
+            }
+            &:before {
+                position: absolute;
+                content: "";
+                left: -12px;
+                top: -12px;
+                bottom: -12px;
+                right: -12px;
+            }
+        }
+    }
+    .time {
+        color: #999;
+        font-size: .26rem;
+        border-bottom: .02rem solid #f5f7f8;
+        padding-bottom: .2rem;
+        margin-bottom: .4rem;
+        span {
+            margin-right: .3rem;
+        }
+    }
+    .oneItem {
+        margin-bottom: .18rem;
+        display: flex;
+        color: #999;
+        line-height: .28rem;
+        span {
+            display: inline-block;
+            font-size: .3rem;
+        }
+        .title {
+            width: 1.3rem;
+            text-align: justify;
+            color: #999;
+            text-align-last: justify;
+        }
+        .title::after {
+            content: "";
+            width: 100%;
+            display: inline-block;
+        }
+        .val {
+            margin-left: .1rem;
+            flex: 1;
+            color: #333;
+        }
+        .val1 {
+            display: inline-block;
+            height: .28rem;
+            line-height: .28rem;
+            margin-bottom: .18rem;
+        }
+        .valItem {
+            line-height: .5rem;
+            margin-top: -.1rem;
+        }
+        .clazzName {
+            margin-left: .3rem;
+            color: #666;
+        }
+    }
+
+    .desc {
+        margin-bottom: .2rem;
+        span {
+            color: #999;
+            font-size: .24rem;
+            margin-bottom: .2rem;
+            display: inline-block;
+            padding: 0 .2rem;
+            text-align: center;
+            background-color: #f5f7f8;
+            border-radius: .04rem;
+            border: 1px solid #dbdbdb;
+            margin-right: .2rem;
+            line-height: .48rem;
+        }
+    }
+    .remarkText {
+        color: #666;
+        font-size: .28rem;
+        line-height: .42rem;
+        background-color: #f5f7f8;
+        padding: .2rem;
+        border: 1px solid #dbdbdb;
+        margin-bottom: .4rem;
+    }
+    .mediaWrap {
+        margin-bottom: .4rem;
+        .oneMedia {
+            display: inline-block;
+            width: 1.3rem;
+            height: 1.3rem;
+            margin-right: .1rem;
+            text-align: center;
+            vertical-align: top;
+            margin-bottom: .1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .imgMedia {
+            img {
+                max-width: 2.6rem;
+                max-height: 2.6rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%)
+
+            }
+        }
+        .videoMedia {
+            position: relative;
+            .videoImg {
+                width: 100%;
+                height: 100%;
+            }
+            .playImg {
+                position: absolute;
+                width: .48rem;
+                height: .48rem;
+                left: 50%;
+                margin-left: -.24rem;
+                top: 50%;
+                margin-top: -.24rem;
+            }
+        }
+        .oneMedia:nth-child(5) {
+            margin-right: 0rem;
+        }
+        
+    }
+    .auditInfo {
+        color: #999;
+        font-size: .28rem;
+        padding-top: .26rem;
+        border-top: .01rem solid #e5e5e5;
+        .teacher {
+            color: #333;
+        }
+        .evaTime {
+            float: right;
+        }
+    }
+    .operation {
+        height: .8rem;
+        line-height: .8rem;
+        text-align: center;
+        color: #fff;
+        border-radius: .16rem;
+        position: absolute;
+        width: 100%;
+        font-size: .34rem;
+    }
+    .pass {
+        background-color: #2cd18a;
+        box-shadow: 0px .06rem .1rem 0px rgba(44, 209, 138, 0.35);
+        bottom: 1.3rem;
+    }
+    .cancel {
+        background-color: #fe533a;
+        box-shadow: 0px 6px 10px 0px rgba(254, 83, 58, 0.35);
+        bottom: .3rem;
+    }
+    .pass:active {
+        background-color: #39b881;
+    }
+    .cancel:active {
+        background-color: #e35f4b;
+    }
+}
+.delText {
+    color: #5a5a5a;
+    font-size: .3rem;
+    padding: .3rem .1rem;
+    text-align: left;
+}
+:global {
+    .cancelModal {
+        .am-modal-button-group-h .am-modal-button:first-child {
+            color: #999!important;
+        }
+        .am-modal-button-group-h .am-modal-button {
+            font-size: .36rem;
+        }
+    }
+}
+// pad
+@media screen and (min-width: 960px) and (orientation: landscape) { 
+    .evaluationDetail {
+        position: relative;
+        height: 100%;
+        z-index: 0;
+    }
+    :global {
+        .cancelModal {
+            .am-modal-button-group-h .am-modal-button:first-child {
+                color: #333!important;
+            }
+        }
+    }
+}

@@ -2,7 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const fs = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const modifyVars = require("../package.json").theme;
+// const modifyVars = require("../package.json").theme;
 const s  = path.resolve(__dirname, "../src")
 
 const filePublicPath = "assets/[name].[ext]";
@@ -125,7 +125,7 @@ const vari = {
                     {
                         loader: "less-loader", // compiles Less to CSS
                         options: {
-                            modifyVars: modifyVars,
+                            // modifyVars: modifyVars,
                             javascriptEnabled: true
                         }
                     }

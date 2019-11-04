@@ -1,0 +1,72 @@
+
+  @font-face {
+    font-family: 'evaiconfont';  /* project id 1048204 */
+    src: url('//at.alicdn.com/t/font_1048204_nsjn3wvv8n.eot');
+    src: url('//at.alicdn.com/t/font_1048204_nsjn3wvv8n.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1048204_nsjn3wvv8n.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_1048204_nsjn3wvv8n.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1048204_nsjn3wvv8n.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1048204_nsjn3wvv8n.svg#iconfont') format('svg');
+  }
+
+  .evaiconfont {
+    font-family: "evaiconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.cf:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    *zoom: 1;
+}
+/* 超出使用省略号 */
+.f-ellipsis{overflow: hidden;word-wrap: normal;white-space: nowrap;text-overflow: ellipsis}
+
+.noSelect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.commonTag {
+  display: inline-block;
+  height: .44rem;
+  line-height: .44rem;
+  min-width: 1.22rem;
+  border-radius: .22rem;
+  text-align: center;
+  margin-bottom: .34rem;
+  padding: 0 .12rem;
+  font-size: .24rem;
+}
+.toAudit {
+  color: #ff9900;
+  background-color: #fff9f0;
+  border: 1px solid #ff9900;
+}
+.passed {
+  color: #39b881;
+  background-color: #f5fffb;
+  border: 1px solid #39b881;
+}
+.cancelled {
+  color: #fe533a;
+  background-color: #fff2f0;
+  border: 1px solid #fe533a;
+}
+
+

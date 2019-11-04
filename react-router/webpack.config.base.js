@@ -3,31 +3,31 @@ const webpack = require("webpack");
 const fs = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // const modifyVars = require("../package.json").theme;
-const s  = path.resolve(__dirname, "app")
+const s  = path.resolve(__dirname, "src")
 console.log(s)
 
 const filePublicPath = "assets/[name].[ext]";
 module.exports = {
     //todo 当前的上下文 是根目录下
-    context: path.resolve(__dirname, "./"),
+    // context: path.resolve(__dirname, "./"),
     resolve: {
         // mainFiles: ["index","index.web"],
         modules: [
-            path.resolve(__dirname, "../src"),
-            path.resolve(__dirname, "../node_modules"),
+            path.resolve(__dirname, "./src"),
+            path.resolve(__dirname, "./node_modules"),
             "node_modules"
         ],
-        // alias: {
-        //     src: path.resolve(__dirname, "../src"),
-        //     CONTAINERS: "src/containers",
-        //     MODULES: "src/modules",
-        //     COMPONENTS: "src/components",
-        //     STYLES: "src/styles",
-        //     UTILS: "src/utils",
-        //     ASSETS: "src/assets",
-        //     ROUTER: "src/router",
-        //     STORE: "src/store"
-        // },
+        alias: {
+            src: path.resolve(__dirname, "./src"),
+            CONTAINERS: "src/containers",
+            MODULES: "src/modules",
+            COMPONENTS: "src/components",
+            STYLES: "src/styles",
+            UTILS: "src/utils",
+            ASSETS: "src/assets",
+            ROUTER: "src/router",
+            STORE: "src/store"
+        },
         extensions: [
             ".web.js",
             ".js",
@@ -44,7 +44,7 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 loader: ["babel-loader", "eslint-loader"],
                 exclude: [/node_modules/, /assets/],
-                include: path.resolve(__dirname, "../src")
+                include: path.resolve(__dirname, "./src")
             },
             {
                 test: /\.eot$/,
@@ -143,7 +143,7 @@ module.exports = {
         //     "window.jQuery": "jquery"
         // }),
         new HtmlWebpackPlugin({
-            template: "./src/index.html",
+            template: "views/index.tpl.ejs",
             filename: "index.html",
             minify: true,
             inject: true
