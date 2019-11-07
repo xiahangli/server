@@ -1,15 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src='./resources/js/main.js' id="s1"></script>
     <title>dsfasdfas</title>
+
+    <script src='./resources/js/main.js' id="s1"></script>
+    <script src="./jquery.js"></script>
+    <script type="text/javascript">
+        /*
+         * 分段读取文件为blob ，并使用ajax上传到服务器
+         * 分段上传exe文件会抛出异常
+         */
+        var file = document.getElementById('file');
+        file.onchange = function() {
+            // 获取文件对象
+            var file = this.files[0];
+            var reader = new FileReader();
+            var step = 1024 * 1024;
+            var total = file.size;
+            var cuLoaded = 0;
+            console.info("文件大小：" + file.size);
+            var startTime = new Date();
+            // 读取一段成功
+            reader.onload = function(e) {
+                // 处理读取的结果
+                var loaded = e.loaded;
+                // 将分段数据上传到服务器
+                uploadFile(reader.result, cuLoaded, function() {
+                    console.info('loaded:' + cuLoaded + 'current:' + loaded);
+                    // 如果没有读完，继续
+                    cuLoaded += loaded;
+                    if (cuLoaded < total) {
+                        readBlob(cuLoaded);
+                    } else {
+                        console.log('总共用时：'
+                            + (new Date().getTime() - startTime.getTime())
+                            / 1000);
+                        cuLoaded = total;
+                    }
+                });
+            }
+            // 指定开始位置，分块读取文件
+            function readBlob(start) {
+                // 指定开始位置和结束位置读取文件
+                // console.info('start:' + start);
+                var blob = file.slice(start, start + step);
+                reader.readAsArrayBuffer(blob);
+            }
+            // 开始读取
+            readBlob(0);
+            // 关键代码上传到服务器
+            function uploadFile(result, startIndex, onSuccess) {
+                var blob = new Blob([ result ]);
+                // 提交到服务器
+                var fd = new FormData();
+                fd.append('file', blob);
+                fd.append('filename', file.name);
+                fd.append('loaded', startIndex);
+                var xhr = new XMLHttpRequest();
+                xhr.open('post', 'http://192.168.0.100:8080/test/UploadServlet',
+                    true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        // var data = eval('(' + xhr.responseText + ')');
+                        console.info(xhr.responseText);
+                        if (onSuccess)
+                            onSuccess();
+                    }
+                }
+                // 开始发送
+                xhr.send(fd);
+            }
+        }
+    </script>
 </head>
 <body>
 
-index.html
 
-
-
-
+<!--这里文件上传实例-->
+<div class="container">
+    <div class="panel-heading">分段读取文件：</div>
+    <div class="panel-body">
+        <input type="file" id="file" />
+    </div>
+</div>
 </body>
 </html>
