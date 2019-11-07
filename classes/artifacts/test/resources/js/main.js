@@ -1,23 +1,3 @@
-function a(){
-    var i =0;
-    // function b() {
-    //     alert(++i);
-    // }
-    // return b;
-
-    //等价于上面的写法,匿名写法
-    // return function () {
-    //     alert(++i);
-    // }
-
-    return function b() {
-        alert(++i);
-    }
-}
-
-var c = a();
-c();
-
 jQuery.fn.updateWithText = function(text, speed)
 {
 	var dummy = $('<div/>').html(text);

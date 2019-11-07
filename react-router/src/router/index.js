@@ -6,7 +6,7 @@ const timeout = 1000;
 // export const Home=Loading;
 
 export const Home = new Loadable({
-    loader:() => import('../index'),
+    loader: () => import('../index'),
     loading: Loading,
     timeout: timeout
 });
@@ -49,6 +49,7 @@ export const ToAudit = new Loadable({
     loading: Loading,
     timeout: timeout
 });
+
 
 export const HdToAudit = new Loadable({
     loader: () => import("../containers/Audit/ToAudit/hdToAudit"),

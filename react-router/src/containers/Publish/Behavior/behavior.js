@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import FrameText from '../../../components/FrameText';
 import styles from './behavior.scss';
 
-import axios from '../../../components/axiosApi';
+import axios from '../../../utils/axiosApi';
 import {connect} from 'react-redux';
 import {updateBehaviorData, updateStandardData} from '../../../store/actions';
 

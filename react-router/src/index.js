@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 // import IndexSection from './index_section'
 
 export default class Index extends React.Component{

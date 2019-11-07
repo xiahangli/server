@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './handleInvolved.scss';
 import delPic from '../../../assets/images/del.png';
 import {connect} from 'react-redux';
-import {updateBatchObjectArray} from '../../../assets/actions';
+import {updateBatchObjectArray} from '../../../store/actions';
 class HandleInvolved extends React.Component{
 
     addStu = (curBatchIndex) => {

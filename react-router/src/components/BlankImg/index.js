@@ -1,6 +1,6 @@
 import React from 'react';
 import blaImg from '../../assets/images/blankImg.png';
-import styles from './sass/';
+import styles from './sass/index.scss';
 
 function BlankImg({content}){
     return (

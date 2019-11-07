@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
     //entry是入口
     // entry: './src/qf.js', //相对路径等价于
-    entry:{
+    entry: {
         //多个入口
         main: './src/home.js',
         // about: './src/about.js'
@@ -19,6 +19,23 @@ module.exports = {
         //[]为引用,这里[hash:8]代表截断hash长度为8，下面的两个文件hash值是一样的，可以改成chunkHash
         filename: '[name].[chunkHash:8].js' //打包文件名
     },
+    module:{
+        rules:[
+            {
+                test:/\.jsx?$/,
+                exclude: /node_modules/,
+                use: [{
+                    loader: "babel-loader",
+                    // options: { presets: ["@babel/preset-env","@babel/preset-react"] }
+                }],
+
+            },
+            {   //这里的内容是新增加的对样式的支持
+                test: /\.css$/,
+                use: ["style-loader", "css-loader"],
+            },
+        ]
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: "./src/index.html",
@@ -27,4 +44,4 @@ module.exports = {
             inject: true
         })
     ],
-}
+};

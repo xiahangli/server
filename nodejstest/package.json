@@ -5,17 +5,24 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode development --config scripts/webpack.conf.js",
-    "dev": "webpack-dev-server --open"
+    "dev": "webpack-dev-server --open",
+    "start": "serve dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
     "html-webpack-plugin": "^3.2.0",
+    "serve": "^11.2.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
+    "babel-loader": "^8.0.6",
     "webpack-dev-server": "^3.9.0"
   }
 }

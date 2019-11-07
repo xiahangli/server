@@ -1,0 +1,10 @@
+{
+  "env": {
+    "development": {
+
+    }
+  },
+  "plugins": [
+    "@babel/plugin-proposal-class-properties"
+  ]
+}

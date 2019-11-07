@@ -237,6 +237,7 @@ export default class QueryParams extends React.Component{
         let clazzIds = val[1];
         this.queryParams.gradeIds = gradeIds;
         this.queryParams.clazzIds = clazzIds;
+
         console.log(typeof clazzIds, 'typeof clazzIds');
         
         //  需求：如果是班主任权限，选择年级的时候，需要查出所有的年级，不需要传递clazzIds

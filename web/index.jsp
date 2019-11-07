@@ -11,6 +11,9 @@
     <title>dsfasdfas</title>
   </head>
   <body>
-asdfasdfawef
+  index.jsp
+  <form action="uploadServlet.do" method="post" enctype="multipart/form-data"></form>
+    <input id="file" name="file" type="file"/>${msg}
+  <input type="submit" value="提交" />
   </body>
 </html>

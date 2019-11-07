@@ -67,8 +67,8 @@ public class FirstServlet extends HttpServlet {
         try {
             //使用JSONObject的parseObject方法解析JSON字符串
 
-//            JSONObject jsonObject = JSONObject.parseObject(new User("a"));
-//            result = jsonObject.toJSONString();
+            JSONObject jsonObject = JSONObject.parseObject(new String());
+            String a  = jsonObject.toJSONString();
 //            Gson gson =new Gson();
 //            SerializeNameGson serializeNameGson = gson.fromJson(jb.toString(), SerializeNameGson.class);
 
@@ -88,7 +88,10 @@ public class FirstServlet extends HttpServlet {
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println(
 
+        );
+        String connnection = request.getHeader("Connection");
 //        response.setContentType("text/html");
 //        // Actual logic goes here.
 //        PrintWriter out1 = response.getWriter();

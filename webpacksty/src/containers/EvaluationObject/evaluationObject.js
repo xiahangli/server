@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import {Component} from "react";
 import styles from "./evaluationObject.scss";
 import axios from '../../utils/axiosApi';
 import BlankImg from '../../components/BlankImg';
@@ -8,12 +8,12 @@ import {updateBatchObjectArray} from '../../store/actions';
 import initReactFastclick from 'react-fastclick';
 import LoadingComponent from '../../components/Loading';
 
-const throteTime = 30;
+// const throteTime = 30;
 class EvaluationObject extends Component {
     state = {
-        value: '',       //  用户输入的搜索内容
-        isClearIconShow: false,         //  取消按钮是否显示
-        searchPanelShow: false,           //   搜索面板是否显示 
+        value: '',
+        isClearIconShow: false,
+        searchPanelShow: false,
         currentRadioChosenObject: {}, // 当前选中的对象的基本信息
         checkedStudent: [],     //  用户选中的学生数组
         curPage: 1,     // 页码（默认初始化为1）
@@ -54,7 +54,7 @@ class EvaluationObject extends Component {
             });
             this.setState({checkedStudent});
         }
-        
+
     }
 
     //  判断是否是安卓手机
@@ -89,10 +89,10 @@ class EvaluationObject extends Component {
     getClazzData = () => {
         let url = '/auth/global/evaluation/eva/app/getClazzEvaluate.htm';
         let {id} = this.props.targetTypeData;
-        let typeId = id; 
-        
+        let typeId = id;
+
         let schoolId = sessionStorage.getItem('schoolId');
-        
+
         axios('get', url, {schoolId, typeId})
             .then((json) => {
                 if (json.success) {
@@ -156,7 +156,7 @@ class EvaluationObject extends Component {
 
         //变量scrollHeight是滚动条的总高度
         let scrollHeight = searchResultWrapper.scrollHeight;
-        
+
         let bottomHeight = 100;
         //滚动条到底部的条件
         if (scrollTop + clientHeight + bottomHeight >= scrollHeight && this.state.allowHttp){
@@ -182,7 +182,7 @@ class EvaluationObject extends Component {
         this.setState({isLoading: true}, () => {
             this.getData();
         });
-    }; 
+    };
 
     //  请求列表数据
     getData = (paramCurPage) => {
@@ -205,7 +205,7 @@ class EvaluationObject extends Component {
                 clazzId = pickerValue[1];
             }
         }
-       
+
         axios('get', '/auth/global/evaluation/eva/app/getStudentEvaluate.htm', {
             content: this.state.value,
             schoolId: schoolId,
@@ -236,7 +236,7 @@ class EvaluationObject extends Component {
                                 item.isChecked = false;
                             }
                         });
-                        
+
                         let newAllStsData = allStsData.concat(nowData);
                         newAllStsData.length && this.setState(
                             {
@@ -256,10 +256,10 @@ class EvaluationObject extends Component {
                     }
                 }
             }).catch((error) => {
-                console.log(error);
-            });
+            console.log(error);
+        });
     }
-    
+
     inputChange = (e) => {
         let value = e.target.value;
         value = value.replace(/\s*/g, '');
@@ -294,19 +294,19 @@ class EvaluationObject extends Component {
             this.setState({isClearIconShow: true});
         }
     }
-    
+
     // 点击“关闭”图标，清除输入框内容和搜索关键词面板内容
     clear = () => {
         this.setState({value: '', searchPanelShow: false, isClearIconShow: false, isLoading: true}, () => {
             this.getData();
         });
     };
-    
+
     //  操作学生对象选中与否
     handleStudent = (index) =>{
         let {allStsData, checkedStudent} = this.state;
         let isChecked = allStsData[index].isChecked;
-        
+
         allStsData[index].isChecked = !isChecked;
         //  剔除数据
         if (isChecked) {
@@ -326,7 +326,7 @@ class EvaluationObject extends Component {
     choseConfirm = () => {
         // 这就是要传给发布评价页面的学生对象信息
         this.props.history.replace({pathname: '/evaluate/publish'});
-        
+
         let {checkedStudent} = this.state;
         let targetIds = [];
         checkedStudent.forEach((item) => {
@@ -334,10 +334,10 @@ class EvaluationObject extends Component {
             targetIds.push(item.studentId);
         });
         targetIds = targetIds.join(',');
-        
+
         let {shareStandardData} = this.props;
         let {initScore, content, evaStdType, maxValue, minValue} = shareStandardData;
-        
+
         //  按事项评分
         if (evaStdType === 2) {
             checkedStudent.forEach((item) => {
@@ -357,13 +357,13 @@ class EvaluationObject extends Component {
                 item.score = 0;
                 let scoreDesc = this.getScoreDesc(item.lastScore, content);
                 item.scoreDesc = scoreDesc;
-            }); 
-        } else if (evaStdType === 3) { 
+            });
+        } else if (evaStdType === 3) {
             checkedStudent.forEach((item) => {
                 item.max = 100;
                 item.min = -100;
                 item.initScore = initScore;
-                item.lastScore = initScore; 
+                item.lastScore = initScore;
                 item.score = 0;
             });
         }
@@ -374,7 +374,7 @@ class EvaluationObject extends Component {
                     for (let i = 0; i < checkedStudent.length; i++) {
                         if (checkedStudent[i].studentId === item.targetId) {
                             checkedStudent[i] = Object.assign(
-                                checkedStudent[i], 
+                                checkedStudent[i],
                                 {...item}
                             );
                             if (evaStdType === 1) {
@@ -406,7 +406,7 @@ class EvaluationObject extends Component {
             let {lowScore, topScore} = nowContent[i];
             if (score >= lowScore && score <= topScore) {
                 return nowContent[i].scoreDesc;
-            } 
+            }
         }
         return nowContent[0].scoreDesc;
     }
@@ -415,7 +415,7 @@ class EvaluationObject extends Component {
     getLastRecord = (targetIds) => {
         let url = '/auth/global/evaluation/eva/app/getLastRecord.htm';
         let {shareStandardData, targetTypeData} = this.props;
-        let evaDate = this.props.location.query.evaDate; 
+        let evaDate = this.props.location.query.evaDate;
         let {targetType} = targetTypeData;
         let itemId = shareStandardData.id;
         let schoolId = sessionStorage.getItem('schoolId');
@@ -429,30 +429,30 @@ class EvaluationObject extends Component {
                         resolve([]);
                     }
                 });
-        }); 
+        });
     }
-   
+
     render() {
-        const {allStsData, pickerData, pickerValue, curPage, totalPage, value, initPage, blankText, pickerExtra, 
+        const {allStsData, pickerData, pickerValue, curPage, totalPage, value, initPage, blankText, pickerExtra,
             checkedStudent, isLoading, isClearIconShow, searchPanelShow, showSureBtn} = this.state;
 
         // 搜索按钮控件
-        const searchCon = searchPanelShow ? 
+        const searchCon = searchPanelShow ?
             <div className={styles.keyBoxStyleWrapper}>
                 <div onClick={this.goSearch} className={styles.keyBoxStyle}>搜索：<span className={styles.keywords}>{this.state.value}</span></div>
             </div>
             : "";
-        
+
         // 取消按钮控件
-        const cancelBtn = isClearIconShow ? 
+        const cancelBtn = isClearIconShow ?
             <span onClick={this.clear} className="clearIcon"><i className="evaiconfont" >&#xe81d;</i></span>
             : "";
-        
+
         //下拉加载
-        const dropLoading = 
+        const dropLoading =
             <div className={styles.loading}>
                 {
-                    curPage !== totalPage ? 
+                    curPage !== totalPage ?
                         <span className={styles.loadMore}>
                             <img className={styles.loadingImg} src="https://static.leke.cn/images/common/loader.gif"/>
                             <span className={ styles.loadMoreText}>加载更多...</span>
@@ -461,17 +461,17 @@ class EvaluationObject extends Component {
             </div>;
 
         // 初次查询结果面板(list有值)
-        const searchResult = allStsData.length ? 
-            <div id="searchResultWrapper" onScroll={this.throttleScorll} 
-                className={`${styles.searchResultWrapper} ${value ? '' : styles.searchResultWrapperTop}`}>
+        const searchResult = allStsData.length ?
+            <div id="searchResultWrapper" onScroll={this.throttleScorll}
+                 className={`${styles.searchResultWrapper} ${value ? '' : styles.searchResultWrapperTop}`}>
                 <div className={styles.searchResultScroll}>
                     {
                         allStsData.map((item, index) => {
                             return (
-                                <div className={styles.primeResultItemWrapper} key={index} 
-                                    onClick={() => {
-                                        this.handleStudent(index);
-                                    }}>
+                                <div className={styles.primeResultItemWrapper} key={index}
+                                     onClick={() => {
+                                         this.handleStudent(index);
+                                     }}>
                                     {/* checkbox*/}
                                     {item.isChecked ? <i className={`evaiconfont ${styles.checked}`}>&#xe670;</i> : <i className="evaiconfont">&#xe753;</i>}
                                     <div className={`${styles.infoContainer}`}>
@@ -485,17 +485,17 @@ class EvaluationObject extends Component {
                             );
                         })
                     }
-                </div> 
+                </div>
                 {dropLoading}
             </div>
             : <div className={`${styles.blankWrap} ${value ? '' : styles.searchResultWrapperTop}`}><BlankImg content={blankText}/></div>;
-        
-        const searchBtn = 
+
+        const searchBtn =
             <div className={styles.btnFixed}>
                 {
-                    checkedStudent.length ? 
-                        <div className={ styles.confirmBtnActive} 
-                            onClick={this.choseConfirm}>确定</div> : 
+                    checkedStudent.length ?
+                        <div className={ styles.confirmBtnActive}
+                             onClick={this.choseConfirm}>确定</div> :
                         <div className={styles.confirmBtn}>确定</div>
                 }
             </div>;
@@ -507,13 +507,13 @@ class EvaluationObject extends Component {
                             <div className={styles.inputWrapper}>
                                 <i className="evaiconfont searchIcon">&#xe735;</i>
                                 <input type="text" className={styles.inputStyle}
-                                    placeholder="请输入学生姓名或学号"
-                                    onChange={this.inputChange.bind(this)}
-                                    onBlur={this.inputBlur}
-                                    autoFocus={searchPanelShow}
-                                    onFocus={this.inputFocus}
-                                    value={value}
-                                    id="inputId"
+                                       placeholder="请输入学生姓名或学号"
+                                       onChange={this.inputChange.bind(this)}
+                                       onBlur={this.inputBlur}
+                                       autoFocus={searchPanelShow}
+                                       onFocus={this.inputFocus}
+                                       value={value}
+                                       id="inputId"
                                 />
                                 {cancelBtn}
                             </div>
@@ -539,7 +539,7 @@ class EvaluationObject extends Component {
                             </Picker>
                         </div>
                         {value ? <div className={styles.resultTitle}>查询结果</div> : ""}
-                        {searchCon } 
+                        {searchCon }
                     </div>
                     {initPage ? "" : !isLoading && searchResult}
                     {allStsData.length && showSureBtn ? searchBtn : ""}
@@ -549,7 +549,7 @@ class EvaluationObject extends Component {
             </div>
         );
     }
-} 
+}
 
 // 向外暴露连接组件的包装组件
 export default connect(

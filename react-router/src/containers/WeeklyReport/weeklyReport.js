@@ -8,8 +8,8 @@ import WeeklyTrend from './Charts/weeklyTrend';
 import MostPlusCount from './Charts/mostPlusCount';
 import MostMinusCount from './Charts/mostMinusCount';
 import axios from '../../utils/axiosApi';
-import shadeImg from '../../utils/images/shade.png';
-import BlankImg from '../../utils/BlankImg';
+import shadeImg from '../../assets/images/shade.png';
+import BlankImg from '../../components/BlankImg';
 
 import styles from './weeklyReport.scss';
 

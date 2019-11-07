@@ -3,7 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
 
+
+        <welcome-file>index.action</welcome-file>
+
+    </welcome-file-list>
     <servlet>
         <servlet-name>FirstServlet</servlet-name>
         <servlet-class>server.FirstServlet</servlet-class>
@@ -17,8 +24,23 @@
         <servlet-name>VolatileCachedFactorizer</servlet-name>
         <servlet-class>server.basic.concurrent.VolatileCachedFactorizer</servlet-class>
     </servlet>
+
+
+
     <servlet-mapping>
         <servlet-name>VolatileCachedFactorizer</servlet-name>
         <url-pattern>/VolatileCachedFactorizer</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>server.UploadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    <servlet-name>UploadServlet</servlet-name>
+    <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
 </web-app>
+
+
+
