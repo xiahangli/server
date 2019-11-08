@@ -79,7 +79,7 @@ public class FirstServlet extends HttpServlet {
 //        //先将服务器收到的JSON字符串打印到客户端，再将该字符串转换为JSON对象然后再转换成的JSON字符串打印到客户端
 //        PrintStream out = new PrintStream(response.getOutputStream());
 //        out.println(jb.toString());
-//        out.println(result);
+////        out.println(result);
     }
 
     public void destroy() {

@@ -16,6 +16,10 @@ import java.util.*;
 
 public class UploadServlet extends HttpServlet {
 
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.service(req, resp);
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -29,7 +33,7 @@ public class UploadServlet extends HttpServlet {
             SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
             String strCurrentTime = df.format(new Date());
             //最终文件存储位置
-            String imagePath = "C://Image/" + strCurrentTime + ".png";
+            String imagePath = "/Users/henry/Desktop/temp/" + strCurrentTime + ".png";
             // 这里的文件格式可以自行修改，如.jpg
             FileOutputStream fos = new FileOutputStream(imagePath);
             byte[] bbuf = new byte[32];
@@ -40,60 +44,88 @@ public class UploadServlet extends HttpServlet {
             }
             fos.close();
             stream.close();
+
+            PrintWriter writer = response.getWriter();
+            //        PrintStream out = new PrintStream(response.getOutputStream());
+        writer.println();
+////        out.println(result);
+//            writer.w
+
             /*
              * 但是需要注意，采用这种原始的方式写入文件时，你会发现被写入的文件内容前4行并非是读取文件的真正内容，
              * 从第四行开始才是正文数据。第二行是文件路径以及名称。所以通常的做法是，先将文件写入临时文件中，然后
              * 再采用RandomAccessFile读取临时文件的第四行以后部分。写入到目标文件中。
              */
-            Byte n;
-            // 读取临时文件
-            RandomAccessFile random = new RandomAccessFile(imagePath, "r");
-            int second = 1;
-            String secondLine = null;
-            while (second <= 2) {
-                secondLine = random.readLine();
-                second++;
-            }
-            int position = secondLine.lastIndexOf('\\');
-            // 获取上传文件的名称
-            String fileName = secondLine.substring(position + 1, secondLine.length() - 1);
-            random.seek(0);
-            long forthEndPosition = 0;
-            int forth = 1;
-            while ((n = random.readByte()) != -1 && (forth <= 4)) {
-                if (n == '\n') {
-                    forthEndPosition = random.getFilePointer();
-                    forth++;
-                }
-            }
-            RandomAccessFile random2 = new RandomAccessFile(imagePath, "rw");
-            random.seek(random.length());
-            long endPosition = random.getFilePointer();
-            long mark = endPosition;
-            int j = 1;
-            while ((mark >= 0) && (j <= 6)) {
-                mark--;
-                random.seek(mark);
-                n = random.readByte();
-                if (n == '\n') {
-                    endPosition = random.getFilePointer();
-                    j++;
-                }
-            }
-            random.seek(forthEndPosition);
-            long startPoint = random.getFilePointer();
-            while (startPoint < endPosition - 1) {
-                n = random.readByte();
-                random2.write(n);
-                startPoint = random.getFilePointer();
-            }
-            random.close();
-            random2.close();
+//            Byte n;
+//            // 读取临时文件
+//            RandomAccessFile random = new RandomAccessFile(imagePath, "r");
+//            int second = 1;
+//            String secondLine = null;
+//            while (second <= 2) {
+//                secondLine = random.readLine();
+//                second++;
+//            }
+//            int position = secondLine.lastIndexOf('\\');
+//            // 获取上传文件的名称
+//            String fileName = secondLine.substring(position + 1, secondLine.length() - 1);
+//            random.seek(0);
+//            long forthEndPosition = 0;
+//            int forth = 1;
+//            while ((n = random.readByte()) != -1 && (forth <= 4)) {
+//                if (n == '\n') {
+//                    forthEndPosition = random.getFilePointer();
+//                    forth++;
+//                }
+//            }
+//            RandomAccessFile random2 = new RandomAccessFile(imagePath, "rw");
+//            random.seek(random.length());
+//            long endPosition = random.getFilePointer();
+//            long mark = endPosition;
+//            int j = 1;
+//            while ((mark >= 0) && (j <= 6)) {
+//                mark--;
+//                random.seek(mark);
+//                n = random.readByte();
+//                if (n == '\n') {
+//                    endPosition = random.getFilePointer();
+//                    j++;
+//                }
+//            }
+//            random.seek(forthEndPosition);
+//            long startPoint = random.getFilePointer();
+//            while (startPoint < endPosition - 1) {
+//                n = random.readByte();
+//                random2.write(n);
+//                startPoint = random.getFilePointer();
+//            }
+//            random.close();
+//            random2.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
+
+    public void writeHtml(HttpServletResponse response, String html) {
+        response.setContentType("text/html;;charset=utf-8");
+        response.setHeader("Pragma", "No-cache");
+        response.setHeader("Cache-Control", "no-cache");
+        response.setDateHeader("Expires", 0);
+        PrintWriter pw = null;
+        try {
+            pw = response.getWriter();
+            pw.write(html);
+            pw.flush();
+        } catch (Exception e) {
+//            logger.info("输出HTML数据异常", e);
+        }finally{
+            if(pw!=null){
+                pw.close();
+            }
+        }
+    }
+
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
